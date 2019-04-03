@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class CameraTargetTest : MonoBehaviour
+public class JumpController : MonoBehaviour
 {
     public float jumpSpeed = 10f;
     private Rigidbody rb;

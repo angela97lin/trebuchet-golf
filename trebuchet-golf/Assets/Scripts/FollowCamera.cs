@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    public Transform target;
+    public FollowCameraTarget target;
     [Range(0,1)]
     public float followSpeed = 0.5f;
 
@@ -15,7 +15,7 @@ public class FollowCamera : MonoBehaviour
     {
         if (target != null)
         {
-            transform.LookAt(target);
+            transform.LookAt(target.transform);
         }
         cameraLocations = Object.FindObjectsOfType<CameraLocation>();
         if (cameraLocations.Length == 0)
@@ -27,26 +27,25 @@ public class FollowCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateCameraPosition();
+        if (target.GetRigidbody().velocity.y < 0) // Only change camera position once ball begins downward arc
+        {
+            updateCameraPosition();
+        }
         Quaternion currentRotation = transform.rotation;
-        transform.LookAt(target);
+        transform.LookAt(target.transform);
         Quaternion targetRotation = transform.rotation;
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, followSpeed);
     }
 
     void updateCameraPosition()
     {
-        if (Input.GetKeyDown("r"))
-        {
-            MoveNearTarget();
-        }
         if (cameraLocations.Length != 0)
         {
             Vector3 closestPosition = transform.position;
-            float closestDistance = Vector3.Magnitude(transform.position - target.position);
+            float closestDistance = Vector3.Magnitude(transform.position - target.transform.position);
             foreach (CameraLocation cl in cameraLocations)
             {
-                float testDistance = Vector3.Magnitude(cl.transform.position - target.position);
+                float testDistance = Vector3.Magnitude(cl.transform.position - target.transform.position);
                 if (testDistance < closestDistance)
                 {
                     closestDistance = testDistance;
@@ -55,10 +54,5 @@ public class FollowCamera : MonoBehaviour
             }
             transform.position = closestPosition;
         }
-    }
-
-    public void MoveNearTarget()
-    {
-        transform.position = target.position + new Vector3(1f,1f,1f);
     }
 }
