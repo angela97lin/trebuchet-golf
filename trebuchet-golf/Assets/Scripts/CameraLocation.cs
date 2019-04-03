@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Used for marking valid locations for the camera to be when following the ball.
 public class CameraLocation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnDrawGizmos()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, 0.5f);
     }
 }

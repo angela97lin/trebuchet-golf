@@ -42,8 +42,8 @@ public class FollowCamera : MonoBehaviour
         }
         if (cameraLocations.Length != 0)
         {
-            Vector3 closestPosition = cameraLocations[0].transform.position;
-            float closestDistance = Vector3.Magnitude(closestPosition - target.position);
+            Vector3 closestPosition = transform.position;
+            float closestDistance = Vector3.Magnitude(transform.position - target.position);
             foreach (CameraLocation cl in cameraLocations)
             {
                 float testDistance = Vector3.Magnitude(cl.transform.position - target.position);
