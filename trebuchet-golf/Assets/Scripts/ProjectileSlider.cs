@@ -79,7 +79,7 @@ public class ProjectileSlider : MonoBehaviour
 
             float step = this.speed * Time.deltaTime;
 
-            Vector3 force = Vector3.RotateTowards(direction, transform.up, Mathf.PI / 4.0f, 0.0f) * playerPower;
+            Vector3 force = Vector3.RotateTowards(direction, transform.up, Mathf.PI / 4.0f, 0.0f) * (playerPower * 10f);
 
             this.rb.AddForce(force, ForceMode.Impulse);
         }

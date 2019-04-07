@@ -14,11 +14,14 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     float playerPower = 0.0f;
     bool canLaunch = false;
-
+    private Rigidbody rb;
+    private Camera cam;
     // Start is called before the first frame update
     void Start()
     {
         this.startPos = transform.position;
+        this.rb = GetComponent<Rigidbody>();
+        this.cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -30,8 +33,9 @@ public class Projectile : MonoBehaviour
                 this.playerPower += 0.1f;
             this.canLaunch = true;
         }
-        else
-            this.ParabolicArc(this.playerPower);
+        else if (Input.GetMouseButtonUp(0))
+            this.AddBallForce(this.playerPower);
+           //this.ParabolicArc(this.playerPower);
 
     }
 
@@ -61,5 +65,21 @@ public class Projectile : MonoBehaviour
 
     }
 
-   
+    void AddBallForce(float playerPower)
+    {
+        if (this.canLaunch)
+        {
+            Vector3 direction = (this.transform.position - this.cam.transform.position).normalized;
+
+            float step = this.speed * Time.deltaTime;
+
+            Vector3 force = Vector3.RotateTowards(direction, transform.up, Mathf.PI / 4.0f, 0.0f) * (playerPower * 10f);
+
+            this.rb.AddForce(force, ForceMode.Impulse);
+        }
+
+
+    }
+
+
 }
