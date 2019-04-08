@@ -66,7 +66,7 @@ public class FollowCamera : MonoBehaviour
         }
     }
 
-    void onTeeUp()
+    public void onTeeUp()
     {
         Vector3 directionToHole = hole.gameObject.transform.position - target.gameObject.transform.position;
         directionToHole.y = 0;
@@ -78,7 +78,7 @@ public class FollowCamera : MonoBehaviour
         ballInAir = false;
     }
 
-    void onBallHit()
+    public void onBallHit()
     {
         ballInAir = true;
     }
