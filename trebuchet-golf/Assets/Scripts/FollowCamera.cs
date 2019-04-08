@@ -62,13 +62,13 @@ public class FollowCamera : MonoBehaviour
         }
     }
 
-    void onTeeUp()
+    public void onTeeUp()
     {
         //TODO: Get ball location and line up with hole.
         ballInAir = false;
     }
 
-    void onBallHit()
+    public void onBallHit()
     {
         ballInAir = true;
     }

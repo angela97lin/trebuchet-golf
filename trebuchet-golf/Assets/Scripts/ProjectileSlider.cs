@@ -10,38 +10,69 @@ public class ProjectileSlider : MonoBehaviour
     public float speed = 10;
     public float arcHeight = 25;
     public Slider playerPower;
+
     public Button launchButton;
-    Camera cam;
+    public Camera cam;
 
     Vector3 startPos;
     bool canLaunch = false;
     float power;
     Rigidbody rb;
+    FollowCamera followCam;
 
     // Start is called before the first frame update
     void Start()
     {
         this.startPos = transform.position;
-        this.cam = Camera.main;
         this.rb = GetComponent<Rigidbody>();
+        this.followCam = this.cam.GetComponent<FollowCamera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (this.playerPower.value > 0)
-        {
-            this.canLaunch = true;
-            //this.launchButton.onClick.AddListener(() => ParabolicArc(this.playerPower.value));
-        }
             
+    }
+
+    private void FixedUpdate()
+    {
+        if(this.rb.velocity.magnitude > 0)
+        {
+            this.launchButton.interactable = false;
+
+            this.playerPower.interactable = false;
+
+            this.canLaunch = false;
+
+
+        }
+        else
+        {
+            this.launchButton.interactable = true;
+            this.playerPower.interactable = true;
+
+
+            if (!this.canLaunch)
+                this.followCam.onTeeUp();
+
+            this.canLaunch = true;
+        }
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        this.rb.drag = 0.1f;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        this.rb.drag = 2f;
     }
 
     public void Launch()
     {
-        /*while(this.transform.position != this.targetPos)
-            this.ParabolicArc(this.playerPower.value);*/
         this.AddBallForce(this.playerPower.value);
+        this.followCam.onBallHit();
     }
 
     void ParabolicArc(float playerPower)
@@ -77,14 +108,20 @@ public class ProjectileSlider : MonoBehaviour
         {
             Vector3 direction = (this.transform.position - this.cam.transform.position).normalized;
 
+            
+
             float step = this.speed * Time.deltaTime;
 
-            Vector3 force = Vector3.RotateTowards(direction, transform.up, Mathf.PI / 4.0f, 0.0f) * (playerPower * 10f);
+            Vector3 force = Vector3.RotateTowards(direction, transform.up, Mathf.PI / 2, 0.0f) * (playerPower * 100f);
 
             this.rb.AddForce(force, ForceMode.Impulse);
         }
+    }
 
-
+    public void Rotate(float sign)
+    {
+        float degree = 2f;
+        this.cam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
     }
 
 
