@@ -69,6 +69,12 @@ public class ProjectileSlider : MonoBehaviour
         this.rb.drag = 2f;
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Hole>())
+            this.rb.velocity = Vector3.zero;
+    }
+
     public void Launch()
     {
         this.AddBallForce(this.playerPower.value);
