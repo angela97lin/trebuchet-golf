@@ -20,5 +20,21 @@ public class JumpController : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
         }
+        if (Input.GetKeyDown("left"))
+        {
+            rb.velocity += new Vector3(-jumpSpeed, 0, 0);
+        }
+        if (Input.GetKeyDown("right"))
+        {
+            rb.velocity += new Vector3(jumpSpeed, 0, 0);
+        }
+        if (Input.GetKeyDown("up"))
+        {
+            rb.velocity += new Vector3(0, 0, jumpSpeed);
+        }
+        if (Input.GetKeyDown("down"))
+        {
+            rb.velocity += new Vector3(0, 0, -jumpSpeed);
+        }
     }
 }

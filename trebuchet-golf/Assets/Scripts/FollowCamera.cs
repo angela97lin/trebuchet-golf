@@ -7,8 +7,10 @@ public class FollowCamera : MonoBehaviour
     public FollowCameraTarget target;
     [Range(0,1)]
     public float followSpeed = 0.5f;
+    public bool testTargetFollow = true;
 
     private CameraLocation[] cameraLocations;
+    private bool ballInAir = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +24,16 @@ public class FollowCamera : MonoBehaviour
         {
             Debug.LogError("Please place CameraLocation objects in the scene!");
         }
+        if (testTargetFollow)
+        {
+            onBallHit();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target.GetRigidbody().velocity.y < 0) // Only change camera position once ball begins downward arc
+        if (target.GetRigidbody().velocity.y < 0 && ballInAir) // Only change camera position once ball begins downward arc
         {
             updateCameraPosition();
         }
@@ -54,5 +60,16 @@ public class FollowCamera : MonoBehaviour
             }
             transform.position = closestPosition;
         }
+    }
+
+    void onTeeUp()
+    {
+        //TODO: Get ball location and line up with hole.
+        ballInAir = false;
+    }
+
+    void onBallHit()
+    {
+        ballInAir = true;
     }
 }
