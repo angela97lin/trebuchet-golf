@@ -7,9 +7,12 @@ public class FollowCamera : MonoBehaviour
     public FollowCameraTarget target;
     [Range(0,1)]
     public float followSpeed = 0.5f;
+    public float teeUpOffsetHeight = 1;
+    public float teeUpOffsetDistance = 2;
     public bool testTargetFollow = true;
 
     private CameraLocation[] cameraLocations;
+    private Hole hole;
     private bool ballInAir = false;
 
     // Start is called before the first frame update
@@ -20,6 +23,7 @@ public class FollowCamera : MonoBehaviour
             transform.LookAt(target.transform);
         }
         cameraLocations = Object.FindObjectsOfType<CameraLocation>();
+        hole = Object.FindObjectOfType<Hole>();
         if (cameraLocations.Length == 0)
         {
             Debug.LogError("Please place CameraLocation objects in the scene!");
@@ -64,7 +68,13 @@ public class FollowCamera : MonoBehaviour
 
     public void onTeeUp()
     {
-        //TODO: Get ball location and line up with hole.
+        Vector3 directionToHole = hole.gameObject.transform.position - target.gameObject.transform.position;
+        directionToHole.y = 0;
+        directionToHole.Normalize();
+        Vector3 offset = -directionToHole * teeUpOffsetDistance;
+        offset.y = teeUpOffsetHeight;
+        transform.position = offset + target.gameObject.transform.position;
+
         ballInAir = false;
     }
 
