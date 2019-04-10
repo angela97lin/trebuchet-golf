@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class FollowCamera : MonoBehaviour
 {
@@ -10,10 +12,15 @@ public class FollowCamera : MonoBehaviour
     public float teeUpOffsetHeight = 1;
     public float teeUpOffsetDistance = 2;
     public bool testTargetFollow = true;
+ 
 
     private CameraLocation[] cameraLocations;
     private Hole hole;
     private bool ballInAir = false;
+
+
+
+    private Transform cameraTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +83,17 @@ public class FollowCamera : MonoBehaviour
 
     public void onTeeUp()
     {
+        this.LineCameraWithHole();
+        ballInAir = false;
+    }
+
+    public void onBallHit()
+    {
+        ballInAir = true;
+    }
+
+    public void LineCameraWithHole()
+    {
         Vector3 directionToHole = hole.gameObject.transform.position - target.gameObject.transform.position;
         directionToHole.y = 0;
         directionToHole.Normalize();
@@ -83,12 +101,5 @@ public class FollowCamera : MonoBehaviour
         offset.y = teeUpOffsetHeight;
         transform.position = offset + target.gameObject.transform.position;
         transform.LookAt(hole.transform);
-
-        ballInAir = false;
-    }
-
-    public void onBallHit()
-    {
-        ballInAir = true;
     }
 }
