@@ -768,6 +768,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_margin.y
+      value: -39.66088
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_margin.x
+      value: -59.988403
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_text
+      value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_textInfo.characterCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5562193295997003163, guid: fddefd0a55fd5a04babbd29219b78526,
         type: 3}
       propertyPath: m_Name
@@ -893,30 +945,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 451432137}
-    - target: {fileID: 5562193295660396912, guid: fddefd0a55fd5a04babbd29219b78526,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Launch
-      objectReference: {fileID: 0}
     - target: {fileID: 5562193295249574847, guid: fddefd0a55fd5a04babbd29219b78526,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 451432137}
-    - target: {fileID: 5562193295249574847, guid: fddefd0a55fd5a04babbd29219b78526,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Rotate
-      objectReference: {fileID: 0}
-    - target: {fileID: 5562193295594863185, guid: fddefd0a55fd5a04babbd29219b78526,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 451432137}
     - target: {fileID: 5562193295594863185, guid: fddefd0a55fd5a04babbd29219b78526,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Rotate
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451432137}
+    - target: {fileID: 5562193295997003160, guid: fddefd0a55fd5a04babbd29219b78526,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
@@ -1298,6 +1340,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: playerPower
+      value: 
+      objectReference: {fileID: 1568916888}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: launchButton
+      value: 
+      objectReference: {fileID: 1036386328}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 390591615}
     - target: {fileID: 6026845280837403685, guid: 20afdd885df1fc74e8f30b11de67fb68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1353,21 +1410,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
-        type: 3}
-      propertyPath: playerPower
-      value: 
-      objectReference: {fileID: 1568916888}
-    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
-        type: 3}
-      propertyPath: launchButton
-      value: 
-      objectReference: {fileID: 1036386328}
-    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 390591615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20afdd885df1fc74e8f30b11de67fb68, type: 3}
 --- !u!114 &1568916888 stripped
