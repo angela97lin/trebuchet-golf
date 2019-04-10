@@ -73,10 +73,10 @@ public class ProjectileSlider : MonoBehaviour
         this.rb.angularDrag = 0.1f;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionStay(Collision collision)
     {
-        this.rb.drag = 15f;
-        this.rb.angularDrag = 15f;
+        this.rb.drag = 5f;
+        this.rb.angularDrag = 0.1f;
     }
 
     public void OnTriggerEnter(Collider other)
