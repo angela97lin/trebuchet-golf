@@ -41,10 +41,10 @@ public class FollowCamera : MonoBehaviour
         {
             updateCameraPosition();
         }
-        Quaternion currentRotation = transform.rotation;
-        transform.LookAt(target.transform);
-        Quaternion targetRotation = transform.rotation;
-        transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, followSpeed);
+        if (ballInAir)
+        {
+            updateCameraRotation();
+        }
     }
 
     void updateCameraPosition()
@@ -66,6 +66,14 @@ public class FollowCamera : MonoBehaviour
         }
     }
 
+    void updateCameraRotation()
+    {
+        Quaternion currentRotation = transform.rotation;
+        transform.LookAt(target.transform);
+        Quaternion targetRotation = transform.rotation;
+        transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, followSpeed);
+    }
+
     public void onTeeUp()
     {
         Vector3 directionToHole = hole.gameObject.transform.position - target.gameObject.transform.position;
@@ -74,6 +82,7 @@ public class FollowCamera : MonoBehaviour
         Vector3 offset = -directionToHole * teeUpOffsetDistance;
         offset.y = teeUpOffsetHeight;
         transform.position = offset + target.gameObject.transform.position;
+        transform.LookAt(hole.transform);
 
         ballInAir = false;
     }
