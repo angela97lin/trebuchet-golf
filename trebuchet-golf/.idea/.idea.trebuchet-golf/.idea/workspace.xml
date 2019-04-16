@@ -4,6 +4,7 @@
     <list default="true" id="fde9f26c-5995-4df8-97e1-0b8592b7c3c6" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/KeyboardControls.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/KeyboardControls.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,15 +94,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/KeyboardControls.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="300">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
-                <marker date="1554925453210" expanded="false" signature="6:78" ph="..." />
-                <marker date="1554925453210" expanded="true" signature="125:555" ph="{...}" />
-                <marker date="1554925453210" expanded="true" signature="224:245" ph="{...}" />
-                <marker date="1554925453210" expanded="true" signature="303:548" ph="{...}" />
-                <marker date="1554925453210" expanded="true" signature="350:423" ph="{...}" />
-                <marker date="1554925453210" expanded="true" signature="469:542" ph="{...}" />
+                <marker date="1554925614175" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554925614175" expanded="true" signature="125:506" ph="{...}" />
+                <marker date="1554925614175" expanded="true" signature="231:252" ph="{...}" />
+                <marker date="1554925614175" expanded="true" signature="310:499" ph="{...}" />
+                <marker date="1554925614175" expanded="true" signature="353:402" ph="{...}" />
+                <marker date="1554925614175" expanded="true" signature="444:493" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -136,6 +137,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>rotate(</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -239,12 +245,12 @@
       <updated>1554746654171</updated>
       <workItem from="1554746662675" duration="170000" />
       <workItem from="1554870531699" duration="1596000" />
-      <workItem from="1554924841714" duration="568000" />
+      <workItem from="1554924841714" duration="1316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2334000" />
+    <option name="totallyTimeSpent" value="3082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -400,15 +406,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/KeyboardControls.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="300">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <marker date="1554925453210" expanded="false" signature="6:78" ph="..." />
-            <marker date="1554925453210" expanded="true" signature="125:555" ph="{...}" />
-            <marker date="1554925453210" expanded="true" signature="224:245" ph="{...}" />
-            <marker date="1554925453210" expanded="true" signature="303:548" ph="{...}" />
-            <marker date="1554925453210" expanded="true" signature="350:423" ph="{...}" />
-            <marker date="1554925453210" expanded="true" signature="469:542" ph="{...}" />
+            <marker date="1554925614175" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554925614175" expanded="true" signature="125:506" ph="{...}" />
+            <marker date="1554925614175" expanded="true" signature="231:252" ph="{...}" />
+            <marker date="1554925614175" expanded="true" signature="310:499" ph="{...}" />
+            <marker date="1554925614175" expanded="true" signature="353:402" ph="{...}" />
+            <marker date="1554925614175" expanded="true" signature="444:493" ph="{...}" />
           </folding>
         </state>
       </provider>
