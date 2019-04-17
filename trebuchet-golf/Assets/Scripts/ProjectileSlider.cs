@@ -74,7 +74,7 @@ public class ProjectileSlider : MonoBehaviour
 
         if(Physics.Raycast(downRay, out hit))
         {
-            float height = hit.distance - hoverDistance;
+            float height = Mathf.Abs(hit.distance - hoverDistance);
             this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.magnitude, 2);
             this.projPotentialEnergy = -1 * this.rb.mass * Physics.gravity.y * height;
 
