@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ProjectileSlider : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class ProjectileSlider : MonoBehaviour
 
     public Button launchButton;
     public Camera cam;
+    public TMP_Text potentialEnergy, kineticEnergy;
 
     Vector3 startPos;
     bool canLaunch = false;
-    float power;
+    float power, totalEnergy, projPotentialEnergy, projKineticEnergy;
+    float hoverDistance = 0.5f;
     Rigidbody rb;
     FollowCamera followCam;
 
@@ -45,7 +48,7 @@ public class ProjectileSlider : MonoBehaviour
 
             this.canLaunch = false;
 
-            if (this.rb.velocity.magnitude < 0.1f)
+            if (this.rb.velocity.magnitude < .8f)
             {
                 this.rb.isKinematic = true;
                 rb.velocity = Vector3.zero;
@@ -64,6 +67,21 @@ public class ProjectileSlider : MonoBehaviour
                 this.followCam.onTeeUp();
 
             this.canLaunch = true;
+        }
+
+        RaycastHit hit;
+        Ray downRay = new Ray(this.transform.position, -Vector3.up);
+
+        if(Physics.Raycast(downRay, out hit))
+        {
+            float height = hit.distance - hoverDistance;
+            this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.magnitude, 2);
+            this.projPotentialEnergy = -1 * this.rb.mass * Physics.gravity.y * height;
+
+
+            this.potentialEnergy.text = "Potential Energy: " + this.projPotentialEnergy.ToString("F1");
+            this.kineticEnergy.text = "Kinetic Energy: " + this.projKineticEnergy.ToString("F1");
+
         }
     }
 
@@ -90,6 +108,7 @@ public class ProjectileSlider : MonoBehaviour
         this.rb.isKinematic = false;
         this.AddBallForce(this.playerPower.value);
         this.followCam.onBallHit();
+        this.totalEnergy = CalculateInitialEnergy();
     }
 
     void ParabolicArc(float playerPower)
@@ -139,6 +158,15 @@ public class ProjectileSlider : MonoBehaviour
         float degree = 2f;
         this.cam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
     }
+
+
+    private float CalculateInitialEnergy()
+    {
+        float energy = this.rb.mass * Physics.gravity.y * (this.playerPower.value * 10f);
+        return energy;
+    }
+
+
 
 
 }
