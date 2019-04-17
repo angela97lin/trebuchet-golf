@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2141913688145282761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.82, y: -0.52, z: 8.18}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2141913688406191230}
   - {fileID: 2982945723468774965}
@@ -59,7 +59,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 1, z: 5}
+  m_Size: {x: 25, y: 1, z: 25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2141913688406191231
 GameObject:
@@ -4759,21 +4759,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!136 &786898125167111342
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141913688704723872}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0025
-  m_Height: 0.083
-  m_Direction: 2
-  m_Center: {x: 5.820767e-11, y: 0, z: 0.037}
---- !u!65 &1486622018568771047
+--- !u!65 &6634632167072804700
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4784,8 +4770,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.003863704, y: 0.027168635, z: 0.018108658}
-  m_Center: {x: 0, y: 0.011652449, z: 0.06881084}
+  m_Size: {x: 0.003863704, y: 0.0037732592, z: 0.006317444}
+  m_Center: {x: 0, y: 0, z: 0.0031587386}
+--- !u!136 &6628974903617983678
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141913688704723872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0024
+  m_Height: 0.075
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.041}
 --- !u!1 &4804635262087970544
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,11 +5060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8bedde65b7a0a4a33a1c9235b86693ee, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8bedde65b7a0a4a33a1c9235b86693ee, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8bedde65b7a0a4a33a1c9235b86693ee, type: 3}
       propertyPath: m_LocalScale.z
