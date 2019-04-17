@@ -45,7 +45,7 @@ public class ProjectileSlider : MonoBehaviour
 
             this.canLaunch = false;
 
-            if (this.rb.velocity.magnitude < 0.1f)
+            if (this.rb.velocity.magnitude < .8f)
             {
                 this.rb.isKinematic = true;
                 rb.velocity = Vector3.zero;
