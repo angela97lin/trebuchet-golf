@@ -179,11 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4971502986211255722, guid: 96c1ddf2d8be649e18ed878f5eabb11b,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4971502986211255723, guid: 96c1ddf2d8be649e18ed878f5eabb11b,
         type: 3}
       propertyPath: playerPower
