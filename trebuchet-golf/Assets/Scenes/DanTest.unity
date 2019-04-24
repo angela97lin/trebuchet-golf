@@ -728,6 +728,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5748572512867512304, guid: ebf60df13bf014c639ef10ffef59ea5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf60df13bf014c639ef10ffef59ea5e, type: 3}
 --- !u!1001 &737268631
@@ -1071,6 +1076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163971066628925430, guid: fddefd0a55fd5a04babbd29219b78526,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
@@ -1687,6 +1697,12 @@ PrefabInstance:
       propertyPath: kineticEnergy
       value: 
       objectReference: {fileID: 926826611}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: trajectoryPrefab
+      value: 
+      objectReference: {fileID: 6939700093926765444, guid: 13f124e5bf9d6d045861c92e146b8048,
+        type: 3}
     - target: {fileID: 6026845280837403685, guid: 20afdd885df1fc74e8f30b11de67fb68,
         type: 3}
       propertyPath: m_LocalPosition.x

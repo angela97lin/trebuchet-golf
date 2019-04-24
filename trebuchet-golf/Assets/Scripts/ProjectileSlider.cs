@@ -11,17 +11,28 @@ public class ProjectileSlider : MonoBehaviour
     public float speed = 10;
     public float arcHeight = 25;
     public Slider playerPower;
+    public GameObject trajectoryPrefab;
 
     public Button launchButton;
     public Camera cam;
     public TMP_Text potentialEnergy, kineticEnergy;
+    public float ballVelocity, ballAngle;
+     int resolution = 10;
 
     Vector3 startPos;
     bool canLaunch = false;
-    float power, totalEnergy, projPotentialEnergy, projKineticEnergy;
+    float power, totalEnergy, projPotentialEnergy, projKineticEnergy, gravity;
     float hoverDistance = 0.5f;
     Rigidbody rb;
     FollowCamera followCam;
+    LineRenderer lr;
+    List<GameObject> allArcPoints;
+
+    private void Awake()
+    {
+        this.lr = GetComponent<LineRenderer>();
+        this.gravity = Mathf.Abs(Physics.gravity.y);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +40,19 @@ public class ProjectileSlider : MonoBehaviour
         this.startPos = transform.position;
         this.rb = GetComponent<Rigidbody>();
         this.followCam = this.cam.GetComponent<FollowCamera>();
+
+        this.ballAngle = Mathf.PI / 4.0f;
+        this.allArcPoints = new List<GameObject>();
+        this.RenderArc();
     }
 
     // Update is called once per frame
     void Update()
     {
-            
+        //this.ParabolicArc(this.playerPower.value);
+        
     }
+
 
     private void FixedUpdate()
     {
@@ -59,6 +76,8 @@ public class ProjectileSlider : MonoBehaviour
         }
         else
         {
+            
+
             this.launchButton.interactable = true;
             this.playerPower.interactable = true;
 
@@ -105,6 +124,7 @@ public class ProjectileSlider : MonoBehaviour
 
     public void Launch()
     {
+        this.ClearArcPoints();
         this.rb.isKinematic = false;
         this.AddBallForce(this.playerPower.value);
         this.followCam.onBallHit();
@@ -138,16 +158,24 @@ public class ProjectileSlider : MonoBehaviour
 
     }
 
+    Vector3 CalculateForceVector()
+    {
+        Vector3 direction = (this.transform.position - this.cam.transform.position);
+        direction = new Vector3(direction.x, 0, direction.z).normalized;
+
+        //float step = this.speed * Time.deltaTime;
+
+        Vector3 force = Vector3.RotateTowards(direction, Vector3.up, this.ballAngle, 0.0f) * (this.playerPower.value * 100f);
+
+        return force;
+    }
+
     void AddBallForce(float playerPower)
     {
         if (this.canLaunch)
         {
-            Vector3 direction = (this.transform.position - this.cam.transform.position);
-            direction = new Vector3(direction.x, 0, direction.z).normalized;
 
-            float step = this.speed * Time.deltaTime;
-
-            Vector3 force = Vector3.RotateTowards(direction, Vector3.up, Mathf.PI / 4, 0.0f) * (playerPower * 100f);
+            Vector3 force = this.CalculateForceVector();
 
             this.rb.AddForce(force, ForceMode.Impulse);
         }
@@ -155,6 +183,7 @@ public class ProjectileSlider : MonoBehaviour
 
     public void Rotate(float sign)
     {
+        this.ClearArcPoints();
         float degree = 2f;
         this.cam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
     }
@@ -165,6 +194,52 @@ public class ProjectileSlider : MonoBehaviour
         float energy = this.rb.mass * Physics.gravity.y * (this.playerPower.value * 10f);
         return energy;
     }
+
+    void RenderArc()
+    {
+        Vector3 launchForce = this.CalculateForceVector();
+
+        this.ballVelocity = ((launchForce / this.rb.mass) * Time.fixedDeltaTime).magnitude;
+        Vector3[] trajectoryPoints = this.CalculateArcArray();
+
+        for(int i = 0; i < trajectoryPoints.Length; i++)
+        {
+            GameObject projPoint = Instantiate(this.trajectoryPrefab, this.transform);
+        }
+    }
+
+    Vector3[] CalculateArcArray()
+    {
+        Vector3[] arcArray = new Vector3[this.resolution + 1];
+
+        float maxDistance = (Mathf.Pow(this.ballVelocity, 2) * Mathf.Sin(2 * this.ballAngle)) / this.gravity;
+
+        for (int i = 0; i <= this.resolution; i++)
+        {
+            float t = (float)i / (float)this.resolution;
+            arcArray[i] = CalculateArcPoint(t, maxDistance);
+        }
+
+        return arcArray;
+
+    }
+
+    Vector3 CalculateArcPoint(float t, float maxDistance)
+    {
+        float z = t * maxDistance;
+        float y = z * Mathf.Tan(this.ballAngle) - ((this.gravity * Mathf.Pow(z,2)/(2 * Mathf.Pow(this.ballVelocity,2) * Mathf.Pow(Mathf.Cos(this.ballAngle),2))));
+        return new Vector3(z, y);
+
+    }
+
+    void ClearArcPoints()
+    {
+        for(int i = this.allArcPoints.Capacity; i >=0; i--)
+        {
+            Destroy(this.allArcPoints[i]);
+        }
+    }
+
 
 
 
