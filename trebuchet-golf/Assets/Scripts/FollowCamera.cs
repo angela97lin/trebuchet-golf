@@ -6,14 +6,12 @@ using UnityEngine.UI;
 
 public class FollowCamera : MonoBehaviour
 {
-    public FollowCameraTarget target;
     [Range(0,1)]
     public float followSpeed = 0.5f;
     public float teeUpOffsetHeight = 1;
     public float teeUpOffsetDistance = 2;
-    public bool testTargetFollow = true;
- 
 
+    private FollowCameraTarget target;
     private CameraLocation[] cameraLocations;
     private Hole hole;
     private bool ballInAir = false;
@@ -25,6 +23,7 @@ public class FollowCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindWithTag("Ball").GetComponent<FollowCameraTarget>();
         if (target != null)
         {
             transform.LookAt(target.transform);
@@ -35,10 +34,7 @@ public class FollowCamera : MonoBehaviour
         {
             Debug.LogError("Please place CameraLocation objects in the scene!");
         }
-        if (testTargetFollow)
-        {
-            onBallHit();
-        }
+        OnTeeUp();
     }
 
     // Update is called once per frame
@@ -46,15 +42,15 @@ public class FollowCamera : MonoBehaviour
     {
         if (target.GetRigidbody().velocity.y < 0 && ballInAir) // Only change camera position once ball begins downward arc
         {
-            updateCameraPosition();
+            UpdateCameraPosition();
         }
         if (ballInAir)
         {
-            updateCameraRotation();
+            UpdateCameraRotation();
         }
     }
 
-    void updateCameraPosition()
+    void UpdateCameraPosition()
     {
         if (cameraLocations.Length != 0)
         {
@@ -73,7 +69,7 @@ public class FollowCamera : MonoBehaviour
         }
     }
 
-    void updateCameraRotation()
+    void UpdateCameraRotation()
     {
         Quaternion currentRotation = transform.rotation;
         transform.LookAt(target.transform);
@@ -81,19 +77,21 @@ public class FollowCamera : MonoBehaviour
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, followSpeed);
     }
 
-    public void onTeeUp()
+    public void OnTeeUp()
     {
-        this.LineCameraWithHole();
+        LineCameraWithHole();
         ballInAir = false;
     }
 
-    public void onBallHit()
+    public void OnBallHit()
     {
         ballInAir = true;
     }
 
     public void LineCameraWithHole()
     {
+        Debug.Log("Hole: " + hole);
+        Debug.Log("Target: " + target);
         Vector3 directionToHole = hole.gameObject.transform.position - target.gameObject.transform.position;
         directionToHole.y = 0;
         directionToHole.Normalize();
