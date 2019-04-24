@@ -23,6 +23,8 @@ public class ProjectileSlider : MonoBehaviour
     Rigidbody rb;
     FollowCamera followCam;
 
+    private float launchTime = -10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,13 +50,13 @@ public class ProjectileSlider : MonoBehaviour
 
             this.canLaunch = false;
 
-            if (this.rb.velocity.magnitude < .8f)
-            {
-                this.rb.isKinematic = true;
-                rb.velocity = Vector3.zero;
-                this.rb.drag = 0.1f;
-                this.rb.angularDrag = 0.1f;
-            }
+            //if (this.rb.velocity.magnitude < .8f)
+            //{
+            //    this.rb.isKinematic = true;
+            //    rb.velocity = Vector3.zero;
+            //    this.rb.drag = 0.1f;
+            //    this.rb.angularDrag = 0.1f;
+            //}
 
         }
         else
@@ -87,14 +89,20 @@ public class ProjectileSlider : MonoBehaviour
 
     public void OnCollisionExit(Collision collision)
     {
-        this.rb.drag = 0.1f;
-        this.rb.angularDrag = 0.1f;
+        //this.rb.drag = 0.1f;
+        //this.rb.angularDrag = 0.1f;
     }
 
     public void OnCollisionStay(Collision collision)
     {
-        this.rb.drag = 5f;
-        this.rb.angularDrag = 0.1f;
+        //this.rb.drag = 5f;
+        //this.rb.angularDrag = 0.1f;
+        if (collision.gameObject.tag == "Terrain" && Time.time - launchTime > 1f)
+        {
+            // TODO: Popup score window here
+            this.rb.isKinematic = true;
+            this.rb.velocity = Vector3.zero;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -109,6 +117,7 @@ public class ProjectileSlider : MonoBehaviour
         this.AddBallForce(this.playerPower.value);
         this.followCam.onBallHit();
         this.totalEnergy = CalculateInitialEnergy();
+        launchTime = Time.time;
     }
 
     void ParabolicArc(float playerPower)
