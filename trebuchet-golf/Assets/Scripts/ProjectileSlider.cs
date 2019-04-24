@@ -10,8 +10,9 @@ public class ProjectileSlider : MonoBehaviour
     public Vector3 targetPos;
     public float speed = 10;
     public float arcHeight = 25;
-    public Slider playerPower;
+    public Slider playerPower, projPotential, projKinetic;
     public GameObject gameoverPrefab;
+
 
     public Button launchButton;
     public Camera cam;
@@ -81,13 +82,29 @@ public class ProjectileSlider : MonoBehaviour
 
         if(Physics.Raycast(downRay, out hit))
         {
+            
             float height = Mathf.Abs(hit.distance - hoverDistance);
-            this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.magnitude, 2);
-            this.projPotentialEnergy = -1 * this.rb.mass * Physics.gravity.y * height;
+            this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.y, 2);
+            this.projPotentialEnergy = this.rb.mass * Physics.gravity.y * height;
+
+            if (this.totalEnergy > 0f)
+            {
+                Debug.Log("Cast");
+                //this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
+               
+                this.projPotential.value = (this.projPotentialEnergy / this.totalEnergy) * 100f;
+                this.projKinetic.value = (this.projKineticEnergy / this.totalEnergy) * 100f;
+            } else
+            {
+                this.projPotential.value = 0f;
+                this.projKinetic.value = 0f;
+            }
+            
+
+            //this.potentialEnergy.text = "Potential Energy: " + this.projPotentialEnergy.ToString("F1");
+            //this.kineticEnergy.text = "Kinetic Energy: " + this.projKineticEnergy.ToString("F1");
 
 
-            this.potentialEnergy.text = "Potential Energy: " + this.projPotentialEnergy.ToString("F1");
-            this.kineticEnergy.text = "Kinetic Energy: " + this.projKineticEnergy.ToString("F1");
 
         }
     }
@@ -182,7 +199,7 @@ public class ProjectileSlider : MonoBehaviour
 
     private float CalculateInitialEnergy()
     {
-        float energy = this.rb.mass * Physics.gravity.y * (this.playerPower.value * 10f);
+        float energy = this.rb.mass * Mathf.Abs(Physics.gravity.y )* (this.playerPower.value * 10f);
         return energy;
     }
 
