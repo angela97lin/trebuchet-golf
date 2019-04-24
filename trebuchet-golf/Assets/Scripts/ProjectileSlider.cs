@@ -12,9 +12,9 @@ public class ProjectileSlider : MonoBehaviour
     public float arcHeight = 25;
     public Slider playerPower;
     public GameObject gameoverPrefab;
+    private FollowCamera followCam;
 
     public Button launchButton;
-    public Camera cam;
     public TMP_Text potentialEnergy, kineticEnergy;
     public float ballVelocity, ballAngle;
 
@@ -23,18 +23,23 @@ public class ProjectileSlider : MonoBehaviour
     float power, totalEnergy, projPotentialEnergy, projKineticEnergy;
     float hoverDistance = 0.5f;
     Rigidbody rb;
-    FollowCamera followCam;
 
     private float launchTime = -10;
 
     // Start is called before the first frame update
     void Start()
     {
+        followCam = Camera.main.GetComponent<FollowCamera>();
         this.startPos = transform.position;
         this.rb = GetComponent<Rigidbody>();
-        this.followCam = this.cam.GetComponent<FollowCamera>();
 
         this.ballAngle = Mathf.PI / 4.0f;
+
+        this.canLaunch = true;
+        this.launchButton.interactable = true;
+        this.playerPower.interactable = true;
+        this.followCam.onTeeUp();
+
     }
 
     // Update is called once per frame
@@ -66,14 +71,14 @@ public class ProjectileSlider : MonoBehaviour
         }
         else
         {
-            this.launchButton.interactable = true;
-            this.playerPower.interactable = true;
+            //this.launchButton.interactable = true;
+            //this.playerPower.interactable = true;
 
 
-            if (!this.canLaunch)
-                this.followCam.onTeeUp();
+            //if (!this.canLaunch)
+            //    this.followCam.onTeeUp();
 
-            this.canLaunch = true;
+            //this.canLaunch = true;
         }
 
         RaycastHit hit;
@@ -104,7 +109,7 @@ public class ProjectileSlider : MonoBehaviour
         //this.rb.angularDrag = 0.1f;
         if (collision.gameObject.tag == "Terrain" && Time.time - launchTime > 1f)
         {
-            // TODO: Popup score window here
+            CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
         }
@@ -154,7 +159,7 @@ public class ProjectileSlider : MonoBehaviour
 
     Vector3 CalculateForceVector()
     {
-        Vector3 direction = (this.transform.position - this.cam.transform.position);
+        Vector3 direction = (this.transform.position - this.followCam.transform.position);
         direction = new Vector3(direction.x, 0, direction.z).normalized;
 
         Vector3 force = Vector3.RotateTowards(direction, Vector3.up, this.ballAngle, 0.0f) * (this.playerPower.value * 100f);
@@ -176,7 +181,7 @@ public class ProjectileSlider : MonoBehaviour
     public void Rotate(float sign)
     {
         float degree = 2f;
-        this.cam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
+        this.followCam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
     }
 
 

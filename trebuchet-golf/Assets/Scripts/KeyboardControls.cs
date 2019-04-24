@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ProjectileSlider))]
 public class KeyboardControls : MonoBehaviour
 {
-    public ProjectileSlider ball;
+    private ProjectileSlider ball;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ball = GetComponent<ProjectileSlider>();
     }
 
     // Update is called once per frame

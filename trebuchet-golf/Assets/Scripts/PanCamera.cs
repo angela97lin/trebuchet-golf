@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class PanCamera : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
 
-    public Transform camera;
+    private Transform camera;
 
     private bool canPan = true;
     private float mouseX;
@@ -27,7 +27,7 @@ public class PanCamera : MonoBehaviour, ISelectHandler, IDeselectHandler
     // Start is called before the first frame update
     void Start()
     {
-        
+        camera = Camera.main.transform;
     }
 
     // Update is called once per frame

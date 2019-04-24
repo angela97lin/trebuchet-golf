@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 public class FollowCamera : MonoBehaviour
 {
-    public FollowCameraTarget target;
     [Range(0,1)]
     public float followSpeed = 0.5f;
     public float teeUpOffsetHeight = 1;
     public float teeUpOffsetDistance = 2;
     public bool testTargetFollow = true;
- 
 
+    private FollowCameraTarget target;
     private CameraLocation[] cameraLocations;
     private Hole hole;
     private bool ballInAir = false;
@@ -25,6 +24,7 @@ public class FollowCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindWithTag("Ball").GetComponent<FollowCameraTarget>();
         if (target != null)
         {
             transform.LookAt(target.transform);
