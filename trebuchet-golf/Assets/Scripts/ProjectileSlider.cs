@@ -38,7 +38,7 @@ public class ProjectileSlider : MonoBehaviour
         this.canLaunch = true;
         this.launchButton.interactable = true;
         this.playerPower.interactable = true;
-        this.followCam.onTeeUp();
+        this.followCam.OnTeeUp();
 
     }
 
@@ -113,6 +113,13 @@ public class ProjectileSlider : MonoBehaviour
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
         }
+        if (collision.gameObject.tag == "Castle")
+        {
+            //TODO: Make different stuff happen
+            CreateGameOver();
+            this.rb.isKinematic = true;
+            this.rb.velocity = Vector3.zero;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -125,7 +132,7 @@ public class ProjectileSlider : MonoBehaviour
     {
         this.rb.isKinematic = false;
         this.AddBallForce(this.playerPower.value);
-        this.followCam.onBallHit();
+        this.followCam.OnBallHit();
         this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
     }

@@ -38,6 +38,6 @@ public class GameoverPopup : MonoBehaviour
 
     void RestartGame()
     {
-        SceneManager.LoadScene("DanTest");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
