@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - WindIndicator
+  - Terrain
   layers:
   - Default
   - TransparentFX
