@@ -11,10 +11,12 @@ public class ProjectileSlider : MonoBehaviour
     public float speed = 10;
     public float arcHeight = 25;
     public Slider playerPower;
+    public GameObject gameoverPrefab;
 
     public Button launchButton;
     public Camera cam;
     public TMP_Text potentialEnergy, kineticEnergy;
+    public float ballVelocity, ballAngle;
 
     Vector3 startPos;
     bool canLaunch = false;
@@ -31,13 +33,16 @@ public class ProjectileSlider : MonoBehaviour
         this.startPos = transform.position;
         this.rb = GetComponent<Rigidbody>();
         this.followCam = this.cam.GetComponent<FollowCamera>();
+
+        this.ballAngle = Mathf.PI / 4.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-            
+        
     }
+
 
     private void FixedUpdate()
     {
@@ -147,16 +152,22 @@ public class ProjectileSlider : MonoBehaviour
 
     }
 
+    Vector3 CalculateForceVector()
+    {
+        Vector3 direction = (this.transform.position - this.cam.transform.position);
+        direction = new Vector3(direction.x, 0, direction.z).normalized;
+
+        Vector3 force = Vector3.RotateTowards(direction, Vector3.up, this.ballAngle, 0.0f) * (this.playerPower.value * 100f);
+
+        return force;
+    }
+
     void AddBallForce(float playerPower)
     {
         if (this.canLaunch)
         {
-            Vector3 direction = (this.transform.position - this.cam.transform.position);
-            direction = new Vector3(direction.x, 0, direction.z).normalized;
 
-            float step = this.speed * Time.deltaTime;
-
-            Vector3 force = Vector3.RotateTowards(direction, Vector3.up, Mathf.PI / 4, 0.0f) * (playerPower * 100f);
+            Vector3 force = this.CalculateForceVector();
 
             this.rb.AddForce(force, ForceMode.Impulse);
         }
@@ -175,6 +186,18 @@ public class ProjectileSlider : MonoBehaviour
         return energy;
     }
 
+    private void CreateGameOverPopup()
+    {
+        GameObject gameoverPopup = Instantiate(this.gameoverPrefab);
+        GameoverPopup gameOver = gameoverPopup.GetComponent<GameoverPopup>();
+        Transform flag = GameObject.Find("Hole").transform;
+        gameOver.Instantiate(this.transform, flag);
+    }
+
+    public void CreateGameOver()
+    {
+        this.CreateGameOverPopup();
+    }
 
 
 
