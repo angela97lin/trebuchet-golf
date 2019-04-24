@@ -61,6 +61,8 @@ public class ProjectileSlider : MonoBehaviour
 
             this.canLaunch = false;
 
+            this.totalEnergy = Mathf.Max(this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.y, 2), this.totalEnergy);
+
             //if (this.rb.velocity.magnitude < .8f)
             //{
             //    this.rb.isKinematic = true;
@@ -95,7 +97,7 @@ public class ProjectileSlider : MonoBehaviour
             if (this.totalEnergy > 0f)
             {
                 Debug.Log("Cast");
-                //this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
+                this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
                
                 this.projPotential.value = (this.projPotentialEnergy / this.totalEnergy) * 100f;
                 this.projKinetic.value = (this.projKineticEnergy / this.totalEnergy) * 100f;
@@ -129,6 +131,7 @@ public class ProjectileSlider : MonoBehaviour
             CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
+            this.totalEnergy = 0f;
         }
         if (collision.gameObject.tag == "Castle")
         {
@@ -136,6 +139,7 @@ public class ProjectileSlider : MonoBehaviour
             CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
+            this.totalEnergy = 0f;
         }
     }
 
@@ -150,7 +154,7 @@ public class ProjectileSlider : MonoBehaviour
         this.rb.isKinematic = false;
         this.AddBallForce(this.playerPower.value);
         this.followCam.OnBallHit();
-        this.totalEnergy = CalculateInitialEnergy();
+        //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
     }
 
@@ -211,7 +215,7 @@ public class ProjectileSlider : MonoBehaviour
 
     private float CalculateInitialEnergy()
     {
-        float energy = this.rb.mass * Mathf.Abs(Physics.gravity.y )* (this.playerPower.value * 10f);
+        float energy = this.rb.mass * Mathf.Abs(Physics.gravity.y )* (this.playerPower.value);
         return energy;
     }
 
