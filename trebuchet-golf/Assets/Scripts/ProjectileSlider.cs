@@ -14,7 +14,6 @@ public class ProjectileSlider : MonoBehaviour
     public GameObject gameoverPrefab;
     private FollowCamera followCam;
 
-
     public Button launchButton;
     public TMP_Text potentialEnergy, kineticEnergy;
     public float ballVelocity, ballAngle;
@@ -24,6 +23,9 @@ public class ProjectileSlider : MonoBehaviour
     float power, totalEnergy, projPotentialEnergy, projKineticEnergy;
     float hoverDistance = 0.5f;
     Rigidbody rb;
+
+    public PathPrediction pathPredictionPrefab;
+    private PathPrediction currentPrediction;
 
     private float launchTime = -10;
     private bool hitCastle = false;
@@ -41,6 +43,7 @@ public class ProjectileSlider : MonoBehaviour
         this.launchButton.interactable = true;
         this.playerPower.interactable = true;
         this.followCam.OnTeeUp();
+        playerPower.onValueChanged.AddListener(delegate { OnPowerChanged(); });
 
     }
 
@@ -152,7 +155,7 @@ public class ProjectileSlider : MonoBehaviour
     public void Launch()
     {
         this.rb.isKinematic = false;
-        this.AddBallForce(this.playerPower.value);
+        this.AddBallForce();
         this.followCam.OnBallHit();
         //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
@@ -195,7 +198,7 @@ public class ProjectileSlider : MonoBehaviour
         return force;
     }
 
-    void AddBallForce(float playerPower)
+    void AddBallForce()
     {
         if (this.canLaunch)
         {
@@ -210,6 +213,7 @@ public class ProjectileSlider : MonoBehaviour
     {
         float degree = 2f;
         this.followCam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
+        PredictPath();
     }
 
 
@@ -234,6 +238,22 @@ public class ProjectileSlider : MonoBehaviour
     public void CreateGameOver()
     {
         this.CreateGameOverPopup();
+    }
+
+    public void OnPowerChanged()
+    {
+        PredictPath();
+    }
+
+    private void PredictPath()
+    {
+        Vector3 launchForce = this.CalculateForceVector();
+        if (currentPrediction != null)
+        {
+            currentPrediction.DestroyAll();
+        }
+        currentPrediction = Instantiate(pathPredictionPrefab, transform.position, Quaternion.identity);
+        currentPrediction.SetForce(launchForce);
     }
 
 
