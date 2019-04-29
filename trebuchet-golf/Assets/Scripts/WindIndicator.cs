@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WindIndicator : MonoBehaviour
 {
+    public TMPro.TextMeshPro textMesh;
     private Vector3 windDirection;
     // Start is called before the first frame update
     void Start()
@@ -23,5 +24,6 @@ public class WindIndicator : MonoBehaviour
     public void SetWind(Vector3 wind)
     {
         windDirection = wind;
+        textMesh.text = "Wind speed: " + ((float)((int)(windDirection.magnitude * 100)) / 100f).ToString();
     }
 }
