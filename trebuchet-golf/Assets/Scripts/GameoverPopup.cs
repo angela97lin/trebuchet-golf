@@ -29,8 +29,6 @@ public class GameoverPopup : MonoBehaviour
         this.ball = ball;
         this.flag = flag;
 
-        Debug.Log("Ball transform: " + this.ball.ToString());
-        Debug.Log("Flag transform: " + this.flag.ToString());
         float distance = Vector3.Distance(this.ball.position, this.flag.position);
 
         this.distanceText.text = "Ayy lmao your distance to the hole was: " + distance.ToString("F1") + "m.";
