@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
+    public Vector2 wind = new Vector2(0,0);
+    public bool randomizeWind = true;
     private Vector3 windStrength;
     private GameObject ball;
     private GameObject windIndicator;
@@ -13,6 +15,7 @@ public class RoundManager : MonoBehaviour
     {
         ball = GameObject.FindWithTag("Ball");
         windIndicator = GameObject.FindWithTag("WindIndicator");
+        windStrength = new Vector3(wind.x, 0, wind.y);
         NewRound();
     }
 
@@ -24,8 +27,10 @@ public class RoundManager : MonoBehaviour
 
     void NewRound()
     {
-        windStrength = Wind.GenerateRandomWind();
-        Debug.Log("Wind Strength : " + windStrength);
+        if (randomizeWind)
+        {
+            windStrength = Wind.GenerateRandomWind();
+        }
         ball.GetComponent<Wind>().SetWind(windStrength);
         windIndicator.GetComponent<WindIndicator>().SetWind(windStrength);
     }

@@ -34,6 +34,6 @@ public class Wind : MonoBehaviour
 
     public static Vector3 GenerateRandomWind()
     {
-        return new Vector3(Random.value, 0, Random.value) * generatedWindScale;
+        return new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f) * generatedWindScale * 2;
     }
 }
