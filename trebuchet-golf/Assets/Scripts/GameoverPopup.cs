@@ -40,4 +40,9 @@ public class GameoverPopup : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void SetText(string text)
+    {
+        distanceText.text = text;
+    }
 }

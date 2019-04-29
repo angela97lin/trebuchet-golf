@@ -25,6 +25,7 @@ public class ProjectileSlider : MonoBehaviour
     Rigidbody rb;
 
     private float launchTime = -10;
+    private bool hitCastle = false;
 
     // Start is called before the first frame update
     void Start()
@@ -115,7 +116,7 @@ public class ProjectileSlider : MonoBehaviour
         }
         if (collision.gameObject.tag == "Castle")
         {
-            //TODO: Make different stuff happen
+            hitCastle = true;
             CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
@@ -204,6 +205,10 @@ public class ProjectileSlider : MonoBehaviour
         GameoverPopup gameOver = gameoverPopup.GetComponent<GameoverPopup>();
         Transform flag = GameObject.Find("Hole").transform;
         gameOver.Instantiate(this.transform, flag);
+        if (hitCastle)
+        {
+            gameOver.SetText("You hit the castle! Congrats!");
+        }
     }
 
     public void CreateGameOver()
