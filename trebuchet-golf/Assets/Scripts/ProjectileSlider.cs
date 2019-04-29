@@ -97,7 +97,6 @@ public class ProjectileSlider : MonoBehaviour
 
             if (this.totalEnergy > 0f)
             {
-                Debug.Log("Cast");
                 this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
                
                 this.projPotential.value = (this.projPotentialEnergy / this.totalEnergy) * 100f;

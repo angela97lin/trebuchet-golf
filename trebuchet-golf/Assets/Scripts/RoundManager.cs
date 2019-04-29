@@ -25,7 +25,6 @@ public class RoundManager : MonoBehaviour
     void NewRound()
     {
         windStrength = Wind.GenerateRandomWind();
-        Debug.Log("Wind Strength : " + windStrength);
         ball.GetComponent<Wind>().SetWind(windStrength);
         windIndicator.GetComponent<WindIndicator>().SetWind(windStrength);
     }
