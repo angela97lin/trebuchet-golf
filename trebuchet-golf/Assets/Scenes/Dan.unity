@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &199239217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6026845280837403685, guid: 20afdd885df1fc74e8f30b11de67fb68,
+    type: 3}
+  m_PrefabInstance: {fileID: 930192631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &245782065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -757,6 +763,32 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2435679422463941562, guid: fddefd0a55fd5a04babbd29219b78526,
+        type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 199239217}
+    - target: {fileID: 2435679422463941562, guid: fddefd0a55fd5a04babbd29219b78526,
+        type: 3}
+      propertyPath: flag
+      value: 
+      objectReference: {fileID: 1675729790}
+    - target: {fileID: 1658454856, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846498563, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 563600390, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780168911, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
 --- !u!114 &797577246 stripped
@@ -861,6 +893,16 @@ PrefabInstance:
       propertyPath: followCam
       value: 
       objectReference: {fileID: 245782067}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: projPotential
+      value: 
+      objectReference: {fileID: 1254385045}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: projKinetic
+      value: 
+      objectReference: {fileID: 1530264231}
     - target: {fileID: 6026845280837403685, guid: 20afdd885df1fc74e8f30b11de67fb68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -952,6 +994,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4767c2732a1b13d4daaccb1238967be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1254385045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 958104586, guid: fddefd0a55fd5a04babbd29219b78526,
+    type: 3}
+  m_PrefabInstance: {fileID: 797577245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1530264231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1965822638, guid: fddefd0a55fd5a04babbd29219b78526,
+    type: 3}
+  m_PrefabInstance: {fileID: 797577245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1675729790 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2141913688145282762, guid: ebf60df13bf014c639ef10ffef59ea5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 378479771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1930886342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1018,6 +1090,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666868308801764346, guid: db6056ed59afc4be5ae3fe1498d00da1,
+        type: 3}
+      propertyPath: wind.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666868308801764346, guid: db6056ed59afc4be5ae3fe1498d00da1,
+        type: 3}
+      propertyPath: wind.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666868308801764346, guid: db6056ed59afc4be5ae3fe1498d00da1,
+        type: 3}
+      propertyPath: randomizeWind
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db6056ed59afc4be5ae3fe1498d00da1, type: 3}

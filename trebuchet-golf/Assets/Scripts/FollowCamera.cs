@@ -90,8 +90,6 @@ public class FollowCamera : MonoBehaviour
 
     public void LineCameraWithHole()
     {
-        Debug.Log("Hole: " + hole);
-        Debug.Log("Target: " + target);
         Vector3 directionToHole = hole.gameObject.transform.position - target.gameObject.transform.position;
         directionToHole.y = 0;
         directionToHole.Normalize();
