@@ -10,9 +10,10 @@ public class ProjectileSlider : MonoBehaviour
     public Vector3 targetPos;
     public float speed = 10;
     public float arcHeight = 25;
-    public Slider playerPower;
+    public Slider playerPower, projPotential, projKinetic;
     public GameObject gameoverPrefab;
     private FollowCamera followCam;
+
 
     public Button launchButton;
     public TMP_Text potentialEnergy, kineticEnergy;
@@ -61,6 +62,8 @@ public class ProjectileSlider : MonoBehaviour
 
             this.canLaunch = false;
 
+            this.totalEnergy = Mathf.Max(this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.y, 2), this.totalEnergy);
+
             //if (this.rb.velocity.magnitude < .8f)
             //{
             //    this.rb.isKinematic = true;
@@ -87,13 +90,29 @@ public class ProjectileSlider : MonoBehaviour
 
         if(Physics.Raycast(downRay, out hit))
         {
+            
             float height = Mathf.Abs(hit.distance - hoverDistance);
-            this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.magnitude, 2);
-            this.projPotentialEnergy = -1 * this.rb.mass * Physics.gravity.y * height;
+            this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.y, 2);
+            this.projPotentialEnergy = this.rb.mass * Physics.gravity.y * height;
+
+            if (this.totalEnergy > 0f)
+            {
+                Debug.Log("Cast");
+                this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
+               
+                this.projPotential.value = (this.projPotentialEnergy / this.totalEnergy) * 100f;
+                this.projKinetic.value = (this.projKineticEnergy / this.totalEnergy) * 100f;
+            } else
+            {
+                this.projPotential.value = 0f;
+                this.projKinetic.value = 0f;
+            }
+            
+
+            //this.potentialEnergy.text = "Potential Energy: " + this.projPotentialEnergy.ToString("F1");
+            //this.kineticEnergy.text = "Kinetic Energy: " + this.projKineticEnergy.ToString("F1");
 
 
-            this.potentialEnergy.text = "Potential Energy: " + this.projPotentialEnergy.ToString("F1");
-            this.kineticEnergy.text = "Kinetic Energy: " + this.projKineticEnergy.ToString("F1");
 
         }
     }
@@ -113,6 +132,7 @@ public class ProjectileSlider : MonoBehaviour
             CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
+            this.totalEnergy = 0f;
         }
         if (collision.gameObject.tag == "Castle")
         {
@@ -120,6 +140,7 @@ public class ProjectileSlider : MonoBehaviour
             CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
+            this.totalEnergy = 0f;
         }
     }
 
@@ -134,7 +155,7 @@ public class ProjectileSlider : MonoBehaviour
         this.rb.isKinematic = false;
         this.AddBallForce(this.playerPower.value);
         this.followCam.OnBallHit();
-        this.totalEnergy = CalculateInitialEnergy();
+        //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
     }
 
@@ -195,7 +216,7 @@ public class ProjectileSlider : MonoBehaviour
 
     private float CalculateInitialEnergy()
     {
-        float energy = this.rb.mass * Physics.gravity.y * (this.playerPower.value * 10f);
+        float energy = this.rb.mass * Mathf.Abs(Physics.gravity.y )* (this.playerPower.value);
         return energy;
     }
 
