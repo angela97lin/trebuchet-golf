@@ -1610,76 +1610,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1707309960}
-    - target: {fileID: 4350335289595143851, guid: fddefd0a55fd5a04babbd29219b78526,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4350335289595143851, guid: fddefd0a55fd5a04babbd29219b78526,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 811827011, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220861240447291197, guid: fddefd0a55fd5a04babbd29219b78526,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958104586, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958104586, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958104586, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958104586, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958104586, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1658454856, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 753693940, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 846498563, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965822638, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965822638, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965822638, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965822638, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965822638, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.b
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780168911, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
       propertyPath: m_AnchorMax.x
