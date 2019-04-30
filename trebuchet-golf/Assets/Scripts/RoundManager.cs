@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    public Vector2 wind = new Vector2(0,0);
+    public Vector2 wind = new Vector2(1,1);
     public bool randomizeWind = true;
     private Vector3 windStrength;
     private GameObject ball;
