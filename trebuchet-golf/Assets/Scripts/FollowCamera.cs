@@ -11,9 +11,11 @@ public class FollowCamera : MonoBehaviour
     public float teeUpOffsetHeight = 1;
     public float teeUpOffsetDistance = 2;
 
+    [SerializeField]
     private FollowCameraTarget target;
     private CameraLocation[] cameraLocations;
-    private Hole hole;
+    [SerializeField]
+    public Hole hole;
     private bool ballInAir = false;
 
 
@@ -29,7 +31,7 @@ public class FollowCamera : MonoBehaviour
             transform.LookAt(target.transform);
         }
         cameraLocations = Object.FindObjectsOfType<CameraLocation>();
-        hole = Object.FindObjectOfType<Hole>();
+        //hole = Object.FindObjectOfType<Hole>();
         if (cameraLocations.Length == 0)
         {
             Debug.LogError("Please place CameraLocation objects in the scene!");

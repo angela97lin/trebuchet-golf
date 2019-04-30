@@ -56,18 +56,26 @@ public class ProjectileSlider : MonoBehaviour
     {
         this.transform.localScale = new Vector3(this.playerPower.value, this.playerPower.value, this.playerPower.value) * 0.6f;
 
+        this.trebuchetReady = this.TrebuchetAnimReady();
+
+    }
+
+    private bool TrebuchetAnimReady()
+    {
+        bool ready = false;
+
         AnimatorStateInfo animationState = this.trebuchetAnim.GetCurrentAnimatorStateInfo(0);
         AnimatorClipInfo[] myAnimatorClip = this.trebuchetAnim.GetCurrentAnimatorClipInfo(0);
         if (myAnimatorClip.Length > 0)
             animTime = myAnimatorClip[0].clip.length * animationState.normalizedTime;
         else
-            animTime = 0;
+            ready = false;
 
         if (this.animTime >= 18)
-            this.trebuchetReady = true;
+            ready = true;
 
+        return ready;
     }
-
 
     private void FixedUpdate()
     {
@@ -124,12 +132,6 @@ public class ProjectileSlider : MonoBehaviour
                 this.projPotential.value = 0f;
                 this.projKinetic.value = 0f;
             }
-            
-
-            //this.potentialEnergy.text = "Potential Energy: " + this.projPotentialEnergy.ToString("F1");
-            //this.kineticEnergy.text = "Kinetic Energy: " + this.projKineticEnergy.ToString("F1");
-
-
 
         }
     }
@@ -178,6 +180,11 @@ public class ProjectileSlider : MonoBehaviour
             //this.totalEnergy = CalculateInitialEnergy();
             launchTime = Time.time;
         }
+        /*this.rb.isKinematic = false;
+        this.AddBallForce();
+        this.followCam.OnBallHit();
+        //this.totalEnergy = CalculateInitialEnergy();
+        launchTime = Time.time;*/
     }
 
     void ParabolicArc(float playerPower)
