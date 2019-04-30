@@ -27,9 +27,9 @@ public class BallMarker : MonoBehaviour
         // Spawn marker balls every second
         if (Time.time - lastSpawn > 2) 
         {
-            Vector3 cloneLocation = new Vector3(transform.position.x, pathMarker.transform.position.y, transform.position.z);
+            Vector3 cloneLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             GameObject clone = Instantiate(pathMarker, cloneLocation, transform.rotation) as GameObject;
-            clone.transform.parent = GameObject.Find("BallTrajectory").transform; 
+            clone.transform.parent = GameObject.Find("BallTrajectory").transform;
         }
     }
 }
