@@ -258,6 +258,11 @@ public class ProjectileSlider : MonoBehaviour
         PredictPath();
     }
 
+    public void OnCameraReset()
+    {
+        PredictPath();
+    }
+
     private void PredictPath()
     {
         Vector3 launchForce = this.CalculateForceVector();

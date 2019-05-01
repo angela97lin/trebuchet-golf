@@ -99,5 +99,6 @@ public class FollowCamera : MonoBehaviour
         offset.y = teeUpOffsetHeight;
         transform.position = offset + target.gameObject.transform.position;
         transform.LookAt(hole.transform);
+        target.GetComponent<ProjectileSlider>().OnCameraReset();
     }
 }
