@@ -33,10 +33,7 @@ public class ProjectileSlider : MonoBehaviour
 
     public Animator trebuchetAnim;
     [SerializeField]
-    LaunchProjectile checkLaunch;
-    [SerializeField]
-    private bool trebuchetReady = false;
-
+    private Transform counterweight;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +55,7 @@ public class ProjectileSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        this.counterweight.localScale = new Vector3(this.playerPower.value, this.playerPower.value, this.playerPower.value) * 2f;
     }
 
 
@@ -172,6 +169,7 @@ public class ProjectileSlider : MonoBehaviour
         this.followCam.OnBallHit();
         //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
+        currentPrediction.DestroyIndicator();
     }
 
     void ParabolicArc(float playerPower)
