@@ -5,6 +5,7 @@ using UnityEngine;
 public class PathPrediction : MonoBehaviour
 {
     public GameObject trailIndicatorPrefab;
+    public GameObject trailMinimapPrefab;
     public GameObject emptyTransformPrefab;
 
     private Rigidbody rb;
@@ -39,7 +40,9 @@ public class PathPrediction : MonoBehaviour
         }
 
         GameObject t = Instantiate(trailIndicatorPrefab, trailParent.transform);
+        GameObject tMinimap = Instantiate(trailMinimapPrefab, trailParent.transform);
         t.transform.position = transform.position;
+        tMinimap.transform.position = transform.position + Vector3.up * 1000;
     }
 
     public void SetForce(Vector3 force)
