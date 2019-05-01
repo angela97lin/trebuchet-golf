@@ -1089,35 +1089,24 @@ PrefabInstance:
     - target: {fileID: 1196378461497450243, guid: b3e9da28536774a68bd295812d1ef009,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1196378461497450243, guid: b3e9da28536774a68bd295812d1ef009,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1196378461497450243, guid: b3e9da28536774a68bd295812d1ef009,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7179439699720503743, guid: b3e9da28536774a68bd295812d1ef009,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 2263786133236859479, guid: b3e9da28536774a68bd295812d1ef009,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1092425714482367301, guid: b3e9da28536774a68bd295812d1ef009,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1092425714482367301, guid: b3e9da28536774a68bd295812d1ef009, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3e9da28536774a68bd295812d1ef009, type: 3}
 --- !u!1 &3248299853774129038 stripped
 GameObject:
