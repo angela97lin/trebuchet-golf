@@ -42,7 +42,7 @@ public class PathPrediction : MonoBehaviour
         GameObject t = Instantiate(trailIndicatorPrefab, trailParent.transform);
         GameObject tMinimap = Instantiate(trailMinimapPrefab, trailParent.transform);
         t.transform.position = transform.position;
-        tMinimap.transform.position = transform.position + Vector3.up * 1000;
+        tMinimap.transform.position = transform.position + Vector3.up * 100;
     }
 
     public void SetForce(Vector3 force)
