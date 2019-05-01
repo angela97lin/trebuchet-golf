@@ -32,7 +32,11 @@ public class ProjectileSlider : MonoBehaviour
     private float animTime;
 
     public Animator trebuchetAnim;
-    bool trebuchetReady = false;
+    [SerializeField]
+    LaunchProjectile checkLaunch;
+    [SerializeField]
+    private bool trebuchetReady = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,17 +59,6 @@ public class ProjectileSlider : MonoBehaviour
     void Update()
     {
         this.transform.localScale = new Vector3(this.playerPower.value, this.playerPower.value, this.playerPower.value) * 0.6f;
-
-        AnimatorStateInfo animationState = this.trebuchetAnim.GetCurrentAnimatorStateInfo(0);
-        AnimatorClipInfo[] myAnimatorClip = this.trebuchetAnim.GetCurrentAnimatorClipInfo(0);
-        if (myAnimatorClip.Length > 0)
-            animTime = myAnimatorClip[0].clip.length * animationState.normalizedTime;
-        else
-            animTime = 0;
-
-        if (this.animTime >= 18)
-            this.trebuchetReady = true;
-
     }
 
 
@@ -171,7 +164,9 @@ public class ProjectileSlider : MonoBehaviour
             this.followCam.OnBallHit();
             //this.totalEnergy = CalculateInitialEnergy();
             launchTime = Time.time;
+            this.checkLaunch.Reset();
         }*/
+
         this.rb.isKinematic = false;
         this.AddBallForce();
         this.followCam.OnBallHit();
