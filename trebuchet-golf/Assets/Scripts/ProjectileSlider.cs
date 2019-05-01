@@ -58,7 +58,7 @@ public class ProjectileSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.localScale = new Vector3(this.playerPower.value, this.playerPower.value, this.playerPower.value) * 0.6f;
+        
     }
 
 
