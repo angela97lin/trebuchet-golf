@@ -109,7 +109,9 @@ MonoBehaviour:
     type: 3}
   trailMinimapPrefab: {fileID: 2343271515166642317, guid: e15ac9e52b81e4696945ee5fb6b63066,
     type: 3}
-  emptyTransformPrefab: {fileID: 9179438027392286064, guid: bb918af874f1e44f2bde3a9d8e7f9665,
+  indicatorContainerPrefab: {fileID: 9179438027392286064, guid: bb918af874f1e44f2bde3a9d8e7f9665,
+    type: 3}
+  minimapContainerPrefab: {fileID: 9179438027392286064, guid: bb918af874f1e44f2bde3a9d8e7f9665,
     type: 3}
 --- !u!54 &3899360036626304593
 Rigidbody:

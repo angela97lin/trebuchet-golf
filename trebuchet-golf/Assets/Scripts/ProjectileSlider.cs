@@ -172,6 +172,7 @@ public class ProjectileSlider : MonoBehaviour
         this.followCam.OnBallHit();
         //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
+        currentPrediction.DestroyIndicator();
     }
 
     void ParabolicArc(float playerPower)
