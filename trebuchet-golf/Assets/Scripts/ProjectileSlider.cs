@@ -127,24 +127,16 @@ public class ProjectileSlider : MonoBehaviour
         }
     }
 
-    public void OnCollisionExit(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        //this.rb.drag = 0.1f;
-        //this.rb.angularDrag = 0.1f;
-    }
-
-    public void OnCollisionStay(Collision collision)
-    {
-        //this.rb.drag = 5f;
-        //this.rb.angularDrag = 0.1f;
-        if (collision.gameObject.tag == "Terrain" && Time.time - launchTime > 1f)
+        if (collision.gameObject.tag == "Terrain" && launched)
         {
             CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
             this.totalEnergy = 0f;
         }
-        if (collision.gameObject.tag == "Castle")
+        if (collision.gameObject.tag == "Castle" && launched)
         {
             hitCastle = true;
             CreateGameOver();
@@ -294,7 +286,7 @@ public class ProjectileSlider : MonoBehaviour
         {
             currentPrediction.DestroyAll();
         }
-        currentPrediction = Instantiate(pathPredictionPrefab, transform.position, Quaternion.identity);
+        currentPrediction = Instantiate(pathPredictionPrefab, launchCheck.position, Quaternion.identity);
         currentPrediction.SetForce(launchForce);
     }
 

@@ -8,7 +8,7 @@ public class Wind : MonoBehaviour
     public Vector3 windStrength;
 
     private Rigidbody rb;
-    private static float generatedWindScale = 5f;
+    private static float generatedWindScale = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,6 @@ public class Wind : MonoBehaviour
 
     public static Vector3 GenerateRandomWind()
     {
-        return new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f) * generatedWindScale * 2;
+        return new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f) * 2 * generatedWindScale;
     }
 }

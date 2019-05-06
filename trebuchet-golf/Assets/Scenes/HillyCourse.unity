@@ -1131,16 +1131,6 @@ PrefabInstance:
       objectReference: {fileID: 464995514}
     - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
-      propertyPath: teeUpOffsetDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
-        type: 3}
-      propertyPath: teeUpOffsetHeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
-        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

@@ -679,6 +679,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.000022888184
       objectReference: {fileID: 0}
+    - target: {fileID: 5562193296698423696, guid: fddefd0a55fd5a04babbd29219b78526,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fddefd0a55fd5a04babbd29219b78526, type: 3}
 --- !u!114 &503172258 stripped
@@ -751,21 +756,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 154037371}
-    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
-        type: 3}
-      propertyPath: teeUpOffsetDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
-        type: 3}
-      propertyPath: teeUpOffsetHeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
       propertyPath: hole
