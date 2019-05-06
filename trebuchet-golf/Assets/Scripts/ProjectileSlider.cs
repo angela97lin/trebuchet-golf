@@ -49,7 +49,6 @@ public class ProjectileSlider : MonoBehaviour
         this.playerPower.interactable = true;
         this.followCam.OnTeeUp();
         playerPower.onValueChanged.AddListener(delegate { OnPowerChanged(); });
-
     }
 
     // Update is called once per frame
@@ -209,6 +208,13 @@ public class ProjectileSlider : MonoBehaviour
         return force;
     }
 
+    Vector3 CalculateLookVector()
+    {
+        Vector3 direction = (this.transform.position - this.followCam.transform.position);
+        direction = new Vector3(direction.x, 0, direction.z).normalized;
+        return direction;
+    }
+
     void AddBallForce()
     {
         if (this.canLaunch)
@@ -224,7 +230,7 @@ public class ProjectileSlider : MonoBehaviour
     {
         float degree = 2f;
         this.followCam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
-        PredictPath();
+        OnAdjustAim();
     }
 
 
@@ -253,12 +259,18 @@ public class ProjectileSlider : MonoBehaviour
 
     public void OnPowerChanged()
     {
-        PredictPath();
+        OnAdjustAim();
     }
 
     public void OnCameraReset()
     {
+        OnAdjustAim();
+    }
+
+    private void OnAdjustAim()
+    {
         PredictPath();
+        GameObject.FindWithTag("Trebuchet").GetComponent<TrebuchetRotation>().LookInDirection(this.CalculateLookVector());
     }
 
     private void PredictPath()
