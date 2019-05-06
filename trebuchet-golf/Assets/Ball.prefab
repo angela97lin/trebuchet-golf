@@ -112,12 +112,17 @@ MonoBehaviour:
   speed: 10
   arcHeight: 25
   playerPower: {fileID: 0}
+  projPotential: {fileID: 0}
+  projKinetic: {fileID: 0}
   gameoverPrefab: {fileID: 0}
   launchButton: {fileID: 0}
   potentialEnergy: {fileID: 0}
   kineticEnergy: {fileID: 0}
   ballVelocity: 0
   ballAngle: 0
+  pathPredictionPrefab: {fileID: 0}
+  trebuchetAnim: {fileID: 0}
+  counterweight: {fileID: 0}
 --- !u!54 &6026845280837403705
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,7 +132,7 @@ Rigidbody:
   m_GameObject: {fileID: 6026845280837403711}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.1
+  m_Drag: 0
   m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 1

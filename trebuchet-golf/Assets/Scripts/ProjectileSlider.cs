@@ -35,6 +35,8 @@ public class ProjectileSlider : MonoBehaviour
     [SerializeField]
     private Transform counterweight;
 
+    private float startHitDistance = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,13 +100,13 @@ public class ProjectileSlider : MonoBehaviour
         if(Physics.Raycast(downRay, out hit))
         {
             
-            float height = Mathf.Abs(hit.distance - hoverDistance);
+            float height = Mathf.Abs(hit.distance - startHitDistance);
             this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.y, 2);
-            this.projPotentialEnergy = this.rb.mass * Physics.gravity.y * height;
+            this.projPotentialEnergy = this.rb.mass * -1 * Physics.gravity.y * height;
 
             if (this.totalEnergy > 0f)
             {
-                this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
+                this.projKineticEnergy = this.totalEnergy - this.projPotentialEnergy;
                
                 this.projPotential.value = (this.projPotentialEnergy / this.totalEnergy) * 100f;
                 this.projKinetic.value = (this.projKineticEnergy / this.totalEnergy) * 100f;
@@ -169,6 +171,13 @@ public class ProjectileSlider : MonoBehaviour
         //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
         currentPrediction.DestroyIndicator();
+
+        RaycastHit startHit;
+        Ray startDownRay = new Ray(this.transform.position, -Vector3.up);
+        if (Physics.Raycast(startDownRay, out startHit, 2 << 8))
+        {
+            startHitDistance = startHit.distance;
+        }
     }
 
     void ParabolicArc(float playerPower)
@@ -203,7 +212,7 @@ public class ProjectileSlider : MonoBehaviour
         Vector3 direction = (this.transform.position - this.followCam.transform.position);
         direction = new Vector3(direction.x, 0, direction.z).normalized;
 
-        Vector3 force = Vector3.RotateTowards(direction, Vector3.up, this.ballAngle, 0.0f) * (this.playerPower.value * 100f);
+        Vector3 force = Vector3.RotateTowards(direction, Vector3.up, this.ballAngle, 0.0f) * (this.playerPower.value * 75f);
 
         return force;
     }
