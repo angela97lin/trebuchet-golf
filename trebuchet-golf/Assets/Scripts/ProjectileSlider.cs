@@ -34,6 +34,8 @@ public class ProjectileSlider : MonoBehaviour
     public Animator trebuchetAnim;
     [SerializeField]
     private Transform counterweight;
+    [SerializeField]
+    private Transform launchCheck, basket;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +94,12 @@ public class ProjectileSlider : MonoBehaviour
 
             //this.canLaunch = true;
         }
-
+        if (this.transform.position.y >= this.launchCheck.position.y)
+        {
+            this.LaunchBallFromBasket();
+            Debug.Log("Launch ball from basket");
+        }
+            
         RaycastHit hit;
         Ray downRay = new Ray(this.transform.position, -Vector3.up);
 
@@ -154,20 +161,16 @@ public class ProjectileSlider : MonoBehaviour
     public void Launch()
     {
         this.trebuchetAnim.SetTrigger("launched");
-        /*if (this.trebuchetReady)
-        {
-            this.rb.isKinematic = false;
-            this.AddBallForce();
-            this.followCam.OnBallHit();
-            //this.totalEnergy = CalculateInitialEnergy();
-            launchTime = Time.time;
-            this.checkLaunch.Reset();
-        }*/
+        this.transform.SetParent(this.basket);
 
+    }
+
+    private void LaunchBallFromBasket()
+    {
+        this.transform.parent = null;
         this.rb.isKinematic = false;
         this.AddBallForce();
         this.followCam.OnBallHit();
-        //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
         currentPrediction.DestroyIndicator();
     }
