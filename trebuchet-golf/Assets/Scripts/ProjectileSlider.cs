@@ -37,7 +37,7 @@ public class ProjectileSlider : MonoBehaviour
     [SerializeField]
     private Transform launchCheck, basket;
 
-    private float startHitDistance = 0f;
+    private float startHeight = 0f;
 
     private bool launched = false;
 
@@ -108,7 +108,7 @@ public class ProjectileSlider : MonoBehaviour
         if(Physics.Raycast(downRay, out hit))
         {
             
-            float height = Mathf.Abs(hit.distance - startHitDistance);
+            float height = transform.position.y - startHeight;
             this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.y, 2);
             this.projPotentialEnergy = this.rb.mass * -1 * Physics.gravity.y * height;
 
@@ -172,7 +172,7 @@ public class ProjectileSlider : MonoBehaviour
         Ray startDownRay = new Ray(this.transform.position, -Vector3.up);
         if (Physics.Raycast(startDownRay, out startHit, 2 << 8))
         {
-            startHitDistance = startHit.distance;
+            startHeight = startHit.point.y;
         }
         launched = true;
     }
