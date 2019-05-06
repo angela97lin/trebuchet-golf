@@ -34,6 +34,12 @@ public class ProjectileSlider : MonoBehaviour
     public Animator trebuchetAnim;
     [SerializeField]
     private Transform counterweight;
+    [SerializeField]
+    private Transform launchCheck, basket;
+
+    private float startHitDistance = 0f;
+
+    private bool launched = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +55,6 @@ public class ProjectileSlider : MonoBehaviour
         this.playerPower.interactable = true;
         this.followCam.OnTeeUp();
         playerPower.onValueChanged.AddListener(delegate { OnPowerChanged(); });
-
     }
 
     // Update is called once per frame
@@ -92,20 +97,24 @@ public class ProjectileSlider : MonoBehaviour
 
             //this.canLaunch = true;
         }
-
+        if (this.transform.position.y >= this.launchCheck.position.y && !launched)
+        {
+            this.LaunchBallFromBasket();
+        }
+            
         RaycastHit hit;
         Ray downRay = new Ray(this.transform.position, -Vector3.up);
 
         if(Physics.Raycast(downRay, out hit))
         {
             
-            float height = Mathf.Abs(hit.distance - hoverDistance);
+            float height = Mathf.Abs(hit.distance - startHitDistance);
             this.projKineticEnergy = this.rb.mass * 0.5f * Mathf.Pow(this.rb.velocity.y, 2);
-            this.projPotentialEnergy = this.rb.mass * Physics.gravity.y * height;
+            this.projPotentialEnergy = this.rb.mass * -1 * Physics.gravity.y * height;
 
             if (this.totalEnergy > 0f)
             {
-                this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
+                this.projKineticEnergy = this.totalEnergy - this.projPotentialEnergy;
                
                 this.projPotential.value = (this.projPotentialEnergy / this.totalEnergy) * 100f;
                 this.projKinetic.value = (this.projKineticEnergy / this.totalEnergy) * 100f;
@@ -118,24 +127,16 @@ public class ProjectileSlider : MonoBehaviour
         }
     }
 
-    public void OnCollisionExit(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        //this.rb.drag = 0.1f;
-        //this.rb.angularDrag = 0.1f;
-    }
-
-    public void OnCollisionStay(Collision collision)
-    {
-        //this.rb.drag = 5f;
-        //this.rb.angularDrag = 0.1f;
-        if (collision.gameObject.tag == "Terrain" && Time.time - launchTime > 1f)
+        if (collision.gameObject.tag == "Terrain" && launched)
         {
             CreateGameOver();
             this.rb.isKinematic = true;
             this.rb.velocity = Vector3.zero;
             this.totalEnergy = 0f;
         }
-        if (collision.gameObject.tag == "Castle")
+        if (collision.gameObject.tag == "Castle" && launched)
         {
             hitCastle = true;
             CreateGameOver();
@@ -154,22 +155,26 @@ public class ProjectileSlider : MonoBehaviour
     public void Launch()
     {
         this.trebuchetAnim.SetTrigger("launched");
-        /*if (this.trebuchetReady)
-        {
-            this.rb.isKinematic = false;
-            this.AddBallForce();
-            this.followCam.OnBallHit();
-            //this.totalEnergy = CalculateInitialEnergy();
-            launchTime = Time.time;
-            this.checkLaunch.Reset();
-        }*/
+        this.transform.SetParent(this.basket);
 
+    }
+
+    private void LaunchBallFromBasket()
+    {
+        this.transform.parent = null;
         this.rb.isKinematic = false;
         this.AddBallForce();
         this.followCam.OnBallHit();
-        //this.totalEnergy = CalculateInitialEnergy();
         launchTime = Time.time;
         currentPrediction.DestroyIndicator();
+
+        RaycastHit startHit;
+        Ray startDownRay = new Ray(this.transform.position, -Vector3.up);
+        if (Physics.Raycast(startDownRay, out startHit, 2 << 8))
+        {
+            startHitDistance = startHit.distance;
+        }
+        launched = true;
     }
 
     void ParabolicArc(float playerPower)
@@ -204,9 +209,16 @@ public class ProjectileSlider : MonoBehaviour
         Vector3 direction = (this.transform.position - this.followCam.transform.position);
         direction = new Vector3(direction.x, 0, direction.z).normalized;
 
-        Vector3 force = Vector3.RotateTowards(direction, Vector3.up, this.ballAngle, 0.0f) * (this.playerPower.value * 100f);
+        Vector3 force = Vector3.RotateTowards(direction, Vector3.up, this.ballAngle, 0.0f) * (this.playerPower.value * 75f);
 
         return force;
+    }
+
+    Vector3 CalculateLookVector()
+    {
+        Vector3 direction = (this.transform.position - this.followCam.transform.position);
+        direction = new Vector3(direction.x, 0, direction.z).normalized;
+        return direction;
     }
 
     void AddBallForce()
@@ -224,7 +236,7 @@ public class ProjectileSlider : MonoBehaviour
     {
         float degree = 2f;
         this.followCam.transform.RotateAround(this.transform.position, Vector3.up, sign * degree);
-        PredictPath();
+        OnAdjustAim();
     }
 
 
@@ -253,12 +265,18 @@ public class ProjectileSlider : MonoBehaviour
 
     public void OnPowerChanged()
     {
-        PredictPath();
+        OnAdjustAim();
     }
 
     public void OnCameraReset()
     {
+        OnAdjustAim();
+    }
+
+    private void OnAdjustAim()
+    {
         PredictPath();
+        GameObject.FindWithTag("Trebuchet").GetComponent<TrebuchetRotation>().LookInDirection(this.CalculateLookVector());
     }
 
     private void PredictPath()
@@ -268,7 +286,7 @@ public class ProjectileSlider : MonoBehaviour
         {
             currentPrediction.DestroyAll();
         }
-        currentPrediction = Instantiate(pathPredictionPrefab, transform.position, Quaternion.identity);
+        currentPrediction = Instantiate(pathPredictionPrefab, launchCheck.position, Quaternion.identity);
         currentPrediction.SetForce(launchForce);
     }
 

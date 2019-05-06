@@ -96,5 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 0.25
-  teeUpOffsetHeight: 0.5
-  teeUpOffsetDistance: 3
+  teeUpOffsetHeight: 8
+  teeUpOffsetDistance: 20
+  target: {fileID: 0}
+  hole: {fileID: 0}
