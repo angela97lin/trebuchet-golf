@@ -262,6 +262,16 @@ PrefabInstance:
       propertyPath: counterweight
       value: 
       objectReference: {fileID: 118624799}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: launchCheck
+      value: 
+      objectReference: {fileID: 1309702876}
+    - target: {fileID: 6026845280837403704, guid: 20afdd885df1fc74e8f30b11de67fb68,
+        type: 3}
+      propertyPath: basket
+      value: 
+      objectReference: {fileID: 1366865501}
     - target: {fileID: 6026845280837403685, guid: 20afdd885df1fc74e8f30b11de67fb68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -993,6 +1003,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84d63ddd830d43e2ae428ca34eeca11, type: 3}
+--- !u!4 &1309702876 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1396822289988298243, guid: cd2ff14c7b15d4407a7a07a5b913283b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2995550177675677138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1366865501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8854947377580644832, guid: cd2ff14c7b15d4407a7a07a5b913283b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2995550177675677138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1384905384 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2995550177675677145, guid: cd2ff14c7b15d4407a7a07a5b913283b,

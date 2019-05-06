@@ -39,6 +39,8 @@ public class ProjectileSlider : MonoBehaviour
 
     private float startHitDistance = 0f;
 
+    private bool launched = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,10 +97,9 @@ public class ProjectileSlider : MonoBehaviour
 
             //this.canLaunch = true;
         }
-        if (this.transform.position.y >= this.launchCheck.position.y)
+        if (this.transform.position.y >= this.launchCheck.position.y && !launched)
         {
             this.LaunchBallFromBasket();
-            Debug.Log("Launch ball from basket");
         }
             
         RaycastHit hit;
@@ -181,6 +182,7 @@ public class ProjectileSlider : MonoBehaviour
         {
             startHitDistance = startHit.distance;
         }
+        launched = true;
     }
 
     void ParabolicArc(float playerPower)
