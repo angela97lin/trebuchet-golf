@@ -14,6 +14,7 @@
         <e p="Scripts" t="Include">
           <e p="BallMarker.cs" t="Include" />
           <e p="CameraLocation.cs" t="Include" />
+          <e p="ColorRangeSlider.cs" t="Include" />
           <e p="Distance.cs" t="Include" />
           <e p="FollowCamera.cs" t="Include" />
           <e p="FollowCameraTarget.cs" t="Include" />

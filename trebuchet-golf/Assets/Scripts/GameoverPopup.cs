@@ -8,22 +8,29 @@ public class GameoverPopup : MonoBehaviour
 {
     Transform ball, flag;
     public TMP_Text distanceText;
-    Button restartButton;
+    Button nextLevelButton;
     Button backToMainMenuButton;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         this.distanceText = GetComponentInChildren<TMP_Text>();
-        this.restartButton = GetComponentInChildren<Button>();
-        this.restartButton.onClick.AddListener(RestartGame);
+        foreach (Button button in GetComponentsInChildren<Button>())
+        {
+            if (button.tag == "NextLevel")
+            {
+                this.nextLevelButton = button;
+                this.nextLevelButton.onClick.AddListener(NavigateToNextLevel);
+            }
+
+            else if (button.tag == "BackToMainMenu")
+            {
+                this.backToMainMenuButton = button;
+                this.backToMainMenuButton.onClick.AddListener(NavigateBackToMainMenu);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void Instantiate(Transform ball, Transform flag)
     {
@@ -35,7 +42,7 @@ public class GameoverPopup : MonoBehaviour
         this.distanceText.text = "Ayy lmao your distance to the hole was: " + distance.ToString("F1") + "m.";
     }
 
-    void BackToMainMenu()
+    void NavigateBackToMainMenu()
     {
         SceneManager.LoadScene("StartScene");
     }
@@ -44,19 +51,19 @@ public class GameoverPopup : MonoBehaviour
     {
         // this is kinda jank but for now,
         // since we only have two scenes, this is hardcoded :)
-
         if (SceneManager.GetActiveScene().name == "MiniMap")
         {
             SceneManager.LoadScene("HillyCourse");
         }
         else if (SceneManager.GetActiveScene().name == "HillyCourse")
         {
-            SceneManager.LoadScene("HillyCourse");
+            // SceneManager.LoadScene("HillyCourse");
+            nextLevelButton.enabled = false;
         }
     }
-    void RestartGame()
+    void BackToMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void SetText(string text)

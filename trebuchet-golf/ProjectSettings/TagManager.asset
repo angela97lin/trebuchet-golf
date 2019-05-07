@@ -9,6 +9,8 @@ TagManager:
   - Terrain
   - Castle
   - Trebuchet
+  - BackToMainMenu
+  - NextLevel
   layers:
   - Default
   - TransparentFX
