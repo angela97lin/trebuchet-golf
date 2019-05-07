@@ -20,7 +20,6 @@ public class InfoPopupButton : MonoBehaviour
     
     public void OpenInfoPopup()
     {
-        Debug.Log("hellooooo1");
         if (topic == "PE")
         {
             infoPopup.PreparePEInfoPopup();
