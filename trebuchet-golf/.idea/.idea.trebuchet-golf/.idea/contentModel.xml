@@ -9,6 +9,7 @@
             <e p="Readme.txt" t="Include" />
           </e>
         </e>
+        <e p="InfoPopup.cs" t="Include" />
         <e p="LaunchProjectile.cs" t="Include" />
         <e p="LoadGame.cs" t="Include" />
         <e p="Scripts" t="Include">
@@ -21,6 +22,7 @@
           <e p="GameoverPopup.cs" t="Include" />
           <e p="Hole.cs" t="Include" />
           <e p="HoleArrow.cs" t="Include" />
+          <e p="InfoPopupButton.cs" t="Include" />
           <e p="JumpController.cs" t="Include" />
           <e p="KeyboardControls.cs" t="Include" />
           <e p="LaunchArcRenderer.cs" t="Include" />

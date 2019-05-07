@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fde9f26c-5995-4df8-97e1-0b8592b7c3c6" name="Default Changelist" comment="" />
+    <list default="true" id="fde9f26c-5995-4df8-97e1-0b8592b7c3c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InfoPopupButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InfoPopupButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MiniMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MiniMap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,33 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/FollowCamera.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <marker date="1556742719230" expanded="false" signature="6:100" ph="..." />
-                <marker date="1556742719230" expanded="true" signature="144:3068" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="581:1054" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="699:767" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="928:1029" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="1112:1383" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="1242:1298" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="1321:1377" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="1416:2095" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="1463:2089" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="1693:2029" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="1866:2015" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="2128:2390" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="2417:2486" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="2515:2553" ph="{...}" />
-                <marker date="1556742719230" expanded="true" signature="2591:3066" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Navigator.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -147,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+            <state relative-caret-position="385">
+              <caret line="61" column="9" lean-forward="true" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
               <folding>
                 <marker date="1557205846671" expanded="false" signature="6:148" ph="..." />
                 <marker date="1557205846671" expanded="true" signature="191:2024" ph="{...}" />
@@ -167,6 +147,41 @@
                 <marker date="1557205846671" expanded="true" signature="1728:1847" ph="{...}" />
                 <marker date="1557205846671" expanded="true" signature="1879:1938" ph="{...}" />
                 <marker date="1557205846671" expanded="true" signature="1976:2022" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/InfoPopup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="29" column="36" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="36" />
+              <folding>
+                <marker date="1557255521979" expanded="false" signature="7:149" ph="..." />
+                <marker date="1557255521979" expanded="true" signature="188:925" ph="{...}" />
+                <marker date="1557255521979" expanded="true" signature="360:430" ph="{...}" />
+                <marker date="1557255521979" expanded="true" signature="469:564" ph="{...}" />
+                <marker date="1557255521979" expanded="true" signature="613:712" ph="{...}" />
+                <marker date="1557255521979" expanded="true" signature="740:811" ph="{...}" />
+                <marker date="1557255521979" expanded="true" signature="841:913" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/InfoPopupButton.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+              <folding>
+                <marker date="1557255662651" expanded="true" signature="7:149" ph="..." />
+                <marker date="1557255662651" expanded="true" signature="194:714" ph="{...}" />
+                <marker date="1557255662651" expanded="true" signature="309:378" ph="{...}" />
+                <marker date="1557255662651" expanded="true" signature="415:703" ph="{...}" />
+                <marker date="1557255662651" expanded="true" signature="481:545" ph="{...}" />
+                <marker date="1557255662651" expanded="true" signature="583:649" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -241,6 +256,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/JumpController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FollowCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InfoPopup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InfoPopupButton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -250,6 +267,8 @@
         <option value="$PROJECT_DIR$/Assets/LoadGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/KeyboardControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/InfoPopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InfoPopupButton.cs" />
       </list>
     </option>
   </component>
@@ -267,6 +286,7 @@
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -285,7 +305,6 @@
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
-      <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
     </panes>
   </component>
@@ -342,11 +361,12 @@
       <workItem from="1557169258477" duration="658000" />
       <workItem from="1557173424831" duration="6000" />
       <workItem from="1557205285082" duration="1151000" />
+      <workItem from="1557250752521" duration="4470000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6143000" />
+    <option name="totallyTimeSpent" value="10613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,7 +381,7 @@
     <frame x="0" y="23" width="1280" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2819063" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28594506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -577,8 +597,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+        <state relative-caret-position="385">
+          <caret line="61" column="9" lean-forward="true" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
           <folding>
             <marker date="1557205846671" expanded="false" signature="6:148" ph="..." />
             <marker date="1557205846671" expanded="true" signature="191:2024" ph="{...}" />
@@ -594,6 +614,37 @@
             <marker date="1557205846671" expanded="true" signature="1728:1847" ph="{...}" />
             <marker date="1557205846671" expanded="true" signature="1879:1938" ph="{...}" />
             <marker date="1557205846671" expanded="true" signature="1976:2022" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InfoPopup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <marker date="1557255521979" expanded="false" signature="7:149" ph="..." />
+            <marker date="1557255521979" expanded="true" signature="188:925" ph="{...}" />
+            <marker date="1557255521979" expanded="true" signature="360:430" ph="{...}" />
+            <marker date="1557255521979" expanded="true" signature="469:564" ph="{...}" />
+            <marker date="1557255521979" expanded="true" signature="613:712" ph="{...}" />
+            <marker date="1557255521979" expanded="true" signature="740:811" ph="{...}" />
+            <marker date="1557255521979" expanded="true" signature="841:913" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/InfoPopupButton.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+          <folding>
+            <marker date="1557255662651" expanded="true" signature="7:149" ph="..." />
+            <marker date="1557255662651" expanded="true" signature="194:714" ph="{...}" />
+            <marker date="1557255662651" expanded="true" signature="309:378" ph="{...}" />
+            <marker date="1557255662651" expanded="true" signature="415:703" ph="{...}" />
+            <marker date="1557255662651" expanded="true" signature="481:545" ph="{...}" />
+            <marker date="1557255662651" expanded="true" signature="583:649" ph="{...}" />
           </folding>
         </state>
       </provider>
