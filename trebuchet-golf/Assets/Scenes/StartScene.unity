@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83eb2eecf3bd14bd3834b99173ee14fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLevelToLoad: StartScene
+  gameLevelToLoad: Credits
 --- !u!114 &1798791134
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fde9f26c-5995-4df8-97e1-0b8592b7c3c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PopupCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/PopupCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HillyCourse.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HillyCourse.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="fde9f26c-5995-4df8-97e1-0b8592b7c3c6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,12 +341,12 @@
       <workItem from="1557169193237" duration="26000" />
       <workItem from="1557169258477" duration="658000" />
       <workItem from="1557173424831" duration="6000" />
-      <workItem from="1557205285082" duration="554000" />
+      <workItem from="1557205285082" duration="1151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5546000" />
+    <option name="totallyTimeSpent" value="6143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
