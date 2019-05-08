@@ -92,3 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 0}
+  arrowMaterial: {fileID: 2100000, guid: e788c97fc144640b5b41830f2dbb6f38, type: 2}
+  lightWindColor: {r: 0.3066038, g: 0.94970185, b: 1, a: 1}
+  strongWindColor: {r: 1, g: 0.25760585, b: 0.18396229, a: 1}
