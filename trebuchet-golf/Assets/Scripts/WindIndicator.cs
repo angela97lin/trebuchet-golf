@@ -6,8 +6,7 @@ public class WindIndicator : MonoBehaviour
 {
     public TMPro.TextMeshPro textMesh;
     public Material arrowMaterial;
-    public Color lightWindColor;
-    public Color strongWindColor;
+    public Gradient windStrengthGradient;
     private Vector3 windDirection;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +30,7 @@ public class WindIndicator : MonoBehaviour
 
         // Change material color of wind indicator
         float strength = (float)windDirection.magnitude / Mathf.Sqrt(200);
-        Color indicatorColor = Color.Lerp(lightWindColor, strongWindColor, strength);
+        Color indicatorColor = windStrengthGradient.Evaluate(strength);
         arrowMaterial.color = indicatorColor;
     }
 }

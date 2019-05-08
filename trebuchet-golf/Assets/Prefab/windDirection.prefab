@@ -93,5 +93,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 0}
   arrowMaterial: {fileID: 2100000, guid: e788c97fc144640b5b41830f2dbb6f38, type: 2}
+  windStrengthGradient:
+    serializedVersion: 2
+    key0: {r: 0.063412234, g: 0.8962264, b: 0.12448522, a: 1}
+    key1: {r: 0.3610357, g: 0.9056604, b: 0.029903898, a: 1}
+    key2: {r: 0.7511921, g: 0.8679245, b: 0.061409745, a: 0}
+    key3: {r: 0.8679245, g: 0.7702569, b: 0.06959773, a: 0}
+    key4: {r: 0.8773585, g: 0.6150207, b: 0.10346207, a: 0}
+    key5: {r: 0.91547817, g: 0.3388979, b: 0.05701122, a: 0}
+    key6: {r: 0.9622642, g: 0, b: 0, a: 0}
+    key7: {r: 0.9622642, g: 0, b: 0, a: 0}
+    ctime0: 386
+    ctime1: 5397
+    ctime2: 14649
+    ctime3: 26600
+    ctime4: 34888
+    ctime5: 46838
+    ctime6: 55705
+    ctime7: 59367
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
   lightWindColor: {r: 0.3066038, g: 0.94970185, b: 1, a: 1}
   strongWindColor: {r: 1, g: 0.25760585, b: 0.18396229, a: 1}
