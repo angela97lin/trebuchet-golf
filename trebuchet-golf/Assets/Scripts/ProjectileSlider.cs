@@ -7,6 +7,11 @@ using TMPro;
 public class ProjectileSlider : MonoBehaviour
 {
 
+    public AudioSource source_ambience;
+    public AudioSource source_launch;
+    public AudioClip ambience;
+    public AudioClip launchSFX;
+
     public Vector3 targetPos;
     public float speed = 10;
     public float arcHeight = 25;
@@ -56,6 +61,12 @@ public class ProjectileSlider : MonoBehaviour
         this.followCam.OnTeeUp();
         startHeight = transform.position.y;
         playerPower.onValueChanged.AddListener(delegate { OnPowerChanged(); });
+
+
+        this.source_ambience = this.GetComponents<AudioSource>()[0];
+        
+        this.source_launch = this.GetComponents<AudioSource>()[1];
+
     }
 
     // Update is called once per frame
@@ -154,10 +165,10 @@ public class ProjectileSlider : MonoBehaviour
     }
 
     public void Launch()
-    {
+    {        
         this.trebuchetAnim.SetTrigger("launched");
         this.transform.SetParent(this.basket);
-
+        source_launch.PlayOneShot(source_launch.clip, 1.0f);
     }
 
     private void LaunchBallFromBasket()
