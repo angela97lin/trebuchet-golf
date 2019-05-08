@@ -29,8 +29,13 @@ public class InfoPopup : MonoBehaviour
     
     public void PrepareMassInfoPopup()
     {
-        titleText.text = "Mass title here";
-        topicText.text = "Mass info here";
+        titleText.text = "Counterweight Mass";
+        topicText.fontSize = 20.0f;
+        topicText.text = "Change this meter to increase the mass of the " +
+        	"counterweight. If you increase the mass of the counterweight, this " +
+        	"will increase the potential energy that will be converted into the " +
+            "kinetic energy of the ball. \n \n How does changing the mass of the" +
+            " counterweight effect how far the ball travels?";
     }
     public void OpenPopup()
     {
