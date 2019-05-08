@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HillyCourse.unity
     guid: 0bc2932ec774340e2b1ca3c6f955d2af
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: bbb8f6acf909c4f23b168d08990607aa
   m_configObjects: {}
