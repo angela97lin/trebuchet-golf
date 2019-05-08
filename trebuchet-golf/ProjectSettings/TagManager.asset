@@ -11,6 +11,7 @@ TagManager:
   - Trebuchet
   - BackToMainMenu
   - NextLevel
+  - ReloadScene
   layers:
   - Default
   - TransparentFX
