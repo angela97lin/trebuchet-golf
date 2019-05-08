@@ -33,4 +33,9 @@ public class WindIndicator : MonoBehaviour
         Color indicatorColor = windStrengthGradient.Evaluate(strength);
         arrowMaterial.color = indicatorColor;
     }
+
+    private void OnDestroy()
+    {
+        arrowMaterial.color = Color.white;
+    }
 }
