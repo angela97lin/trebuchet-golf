@@ -5,6 +5,9 @@ using UnityEngine;
 public class WindIndicator : MonoBehaviour
 {
     public TMPro.TextMeshPro textMesh;
+    public Material arrowMaterial;
+    public Color lightWindColor;
+    public Color strongWindColor;
     private Vector3 windDirection;
     // Start is called before the first frame update
     void Start()
@@ -25,5 +28,10 @@ public class WindIndicator : MonoBehaviour
     {
         windDirection = wind;
         textMesh.text = "Wind speed: " + ((float)((int)(windDirection.magnitude * 100)) / 100f).ToString();
+
+        // Change material color of wind indicator
+        float strength = (float)windDirection.magnitude / Mathf.Sqrt(200);
+        Color indicatorColor = Color.Lerp(lightWindColor, strongWindColor, strength);
+        arrowMaterial.color = indicatorColor;
     }
 }
