@@ -10,6 +10,7 @@ public class GameoverPopup : MonoBehaviour
     public TMP_Text distanceText;
     Button nextLevelButton;
     Button backToMainMenuButton;
+    Button reloadSceneButton;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,10 @@ public class GameoverPopup : MonoBehaviour
                 this.nextLevelButton.onClick.AddListener(NavigateToNextLevel);
             }
 
-            else if (button.tag == "BackToMainMenu")
+            else if (button.tag == "ReloadScene")
             {
-                this.backToMainMenuButton = button;
-                this.backToMainMenuButton.onClick.AddListener(NavigateBackToMainMenu);
+                this.reloadSceneButton = button;
+                this.reloadSceneButton.onClick.AddListener(ReloadActiveScene);
             }
         }
     }
@@ -61,9 +62,10 @@ public class GameoverPopup : MonoBehaviour
             nextLevelButton.enabled = false;
         }
     }
-    void BackToMainMenu()
+    void ReloadActiveScene()
     {
-        SceneManager.LoadScene("StartScreen");
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName);
     }
 
     public void SetText(string text)

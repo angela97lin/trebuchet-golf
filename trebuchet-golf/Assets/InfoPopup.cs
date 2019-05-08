@@ -22,8 +22,17 @@ public class InfoPopup : MonoBehaviour
 
     public void PreparePEInfoPopup()
     {
-        titleText.text = "PE title here";
-        topicText.text = "PE info here";
+        titleText.text = "Energy of the Projectile";
+        topicText.fontSize = 15.0f;
+        topicText.text = "Potential Energy \n The energy possessed by a body " +
+        	"due to its position or configuration is called potential energy. " +
+        	"The potential energy equation of a body having mass m, and height h" +
+            " is PE = mgh. \n\n Kinetic Energy \n The energy possessed by a " +
+            "body due to its motion is called kinetic energy. Kinetic energy " +
+            "equation (KE) of a body having mass m, and velocity v, is KE = 1/2mv\xB2 " +
+            "\n\n How do the potential and kinetic energy change as the projectile" +
+            "travels through the air?";
+
     }
     
     
