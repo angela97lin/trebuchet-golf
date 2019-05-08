@@ -54,6 +54,7 @@ public class ProjectileSlider : MonoBehaviour
         this.launchButton.interactable = true;
         this.playerPower.interactable = true;
         this.followCam.OnTeeUp();
+        startHeight = transform.position.y;
         playerPower.onValueChanged.AddListener(delegate { OnPowerChanged(); });
     }
 
@@ -114,7 +115,7 @@ public class ProjectileSlider : MonoBehaviour
 
             if (this.totalEnergy > 0f)
             {
-                this.projKineticEnergy = this.totalEnergy - this.projPotentialEnergy;
+                this.projPotentialEnergy = this.totalEnergy - this.projKineticEnergy;
                
                 this.projPotential.value = (this.projPotentialEnergy / this.totalEnergy) * 100f;
                 this.projKinetic.value = (this.projKineticEnergy / this.totalEnergy) * 100f;
@@ -168,12 +169,6 @@ public class ProjectileSlider : MonoBehaviour
         launchTime = Time.time;
         currentPrediction.DestroyIndicator();
 
-        RaycastHit startHit;
-        Ray startDownRay = new Ray(this.transform.position, -Vector3.up);
-        if (Physics.Raycast(startDownRay, out startHit, 2 << 8))
-        {
-            startHeight = startHit.point.y;
-        }
         launched = true;
     }
 
