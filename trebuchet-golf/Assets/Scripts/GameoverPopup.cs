@@ -30,6 +30,14 @@ public class GameoverPopup : MonoBehaviour
                 this.reloadSceneButton.onClick.AddListener(ReloadActiveScene);
             }
         }
+
+        if (SceneManager.GetActiveScene().name == "HillyCourse")
+        {
+            Debug.Log("Triggered");
+            nextLevelButton.onClick.AddListener(NavigateBackToMainMenu);
+            Text text = nextLevelButton.GetComponentInChildren<Text>();
+            text.text = "Return to Main Menu";
+        }
     }
 
 
@@ -59,7 +67,7 @@ public class GameoverPopup : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "HillyCourse")
         {
             // SceneManager.LoadScene("HillyCourse");
-            nextLevelButton.enabled = false;
+            //nextLevelButton.enabled = false;
         }
     }
     void ReloadActiveScene()
