@@ -1296,7 +1296,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f42fe93cd059d4847a79c994fc3414db,
+      objectReference: {fileID: 21300000, guid: 2dca51e563ac84ef7b71755cf3b2de3b,
         type: 3}
     - target: {fileID: 6443239700161581567, guid: 7958f195dc86b42a39349216fb13299e,
         type: 3}
@@ -1317,7 +1317,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f42fe93cd059d4847a79c994fc3414db,
+      objectReference: {fileID: 21300000, guid: 2dca51e563ac84ef7b71755cf3b2de3b,
         type: 3}
     - target: {fileID: 6443239701058131779, guid: 7958f195dc86b42a39349216fb13299e,
         type: 3}
@@ -1609,6 +1609,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8475322730876136806, guid: ee22513b96b414dfaa7beb39d74c790e,
+        type: 3}
+      propertyPath: far clip plane
+      value: 930
+      objectReference: {fileID: 0}
     - target: {fileID: 8475322730517871257, guid: ee22513b96b414dfaa7beb39d74c790e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1618,11 +1623,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -345.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8475322730876136806, guid: ee22513b96b414dfaa7beb39d74c790e,
-        type: 3}
-      propertyPath: far clip plane
-      value: 930
       objectReference: {fileID: 0}
     - target: {fileID: 6846323640348041846, guid: ee22513b96b414dfaa7beb39d74c790e,
         type: 3}
