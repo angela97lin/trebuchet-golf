@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83eb2eecf3bd14bd3834b99173ee14fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLevelToLoad: MiniMap
+  gameLevelToLoad: Level1
 --- !u!1 &335501627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5604951, g: 0, b: 0.6037736, a: 1}
+  m_Color: {r: 0, g: 0.16862746, b: 0.6039216, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
