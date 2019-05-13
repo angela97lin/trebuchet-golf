@@ -31,7 +31,7 @@ public class GameoverPopup : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "HillyCourse")
+        if (SceneManager.GetActiveScene().name == "Level2")
         {
             Debug.Log("Triggered");
             nextLevelButton.onClick.AddListener(NavigateBackToMainMenu);
@@ -60,11 +60,11 @@ public class GameoverPopup : MonoBehaviour
     {
         // this is kinda jank but for now,
         // since we only have two scenes, this is hardcoded :)
-        if (SceneManager.GetActiveScene().name == "MiniMap")
+        if (SceneManager.GetActiveScene().name == "Level1")
         {
-            SceneManager.LoadScene("HillyCourse");
+            SceneManager.LoadScene("Level2");
         }
-        else if (SceneManager.GetActiveScene().name == "HillyCourse")
+        else if (SceneManager.GetActiveScene().name == "Level2")
         {
             // SceneManager.LoadScene("HillyCourse");
             //nextLevelButton.enabled = false;
