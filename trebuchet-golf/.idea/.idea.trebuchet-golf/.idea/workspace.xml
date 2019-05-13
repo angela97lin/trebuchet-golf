@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fde9f26c-5995-4df8-97e1-0b8592b7c3c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trebuchet-golf/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/qp2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/qp2.png.meta" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+            <state relative-caret-position="-7">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <marker date="1557773713797" expanded="false" signature="6:148" ph="..." />
                 <marker date="1557773713797" expanded="true" signature="191:2395" ph="{...}" />
@@ -336,12 +336,12 @@
       <workItem from="1557205285082" duration="1151000" />
       <workItem from="1557250752521" duration="5109000" />
       <workItem from="1557346802806" duration="235000" />
-      <workItem from="1557773616834" duration="353000" />
+      <workItem from="1557773616834" duration="1274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11840000" />
+    <option name="totallyTimeSpent" value="12761000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,8 +599,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+        <state relative-caret-position="-7">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           <folding>
             <marker date="1557773713797" expanded="false" signature="6:148" ph="..." />
             <marker date="1557773713797" expanded="true" signature="191:2395" ph="{...}" />

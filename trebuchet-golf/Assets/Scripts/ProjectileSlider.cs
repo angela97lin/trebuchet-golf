@@ -168,7 +168,7 @@ public class ProjectileSlider : MonoBehaviour
     {        
         this.trebuchetAnim.SetTrigger("launched");
         this.transform.SetParent(this.basket);
-        source_launch.PlayOneShot(source_launch.clip, 1.0f);
+        source_launch.PlayDelayed(1.6f);
     }
 
     private void LaunchBallFromBasket()
