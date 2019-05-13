@@ -229,7 +229,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 70, y: 33}
-  m_SizeDelta: {x: 140, y: 25}
+  m_SizeDelta: {x: 60, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &286609426
 MonoBehaviour:
@@ -1148,7 +1148,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 70, y: -50}
-  m_SizeDelta: {x: 140, y: 25}
+  m_SizeDelta: {x: 130, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1294317412
 MonoBehaviour:
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8509804, g: 0.44705883, b: 0.44705883, a: 1}
+    m_HighlightedColor: {r: 0.14727038, g: 0.3647059, b: 0.13861692, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.16862746, b: 0.6039216, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1442,7 +1442,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 70, y: -133}
-  m_SizeDelta: {x: 140, y: 25}
+  m_SizeDelta: {x: 80, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1798791133
 MonoBehaviour:
