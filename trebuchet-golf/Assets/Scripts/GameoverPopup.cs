@@ -11,7 +11,8 @@ public class GameoverPopup : MonoBehaviour
     Button nextLevelButton;
     Button backToMainMenuButton;
     Button reloadSceneButton;
-
+    [SerializeField]
+    Sprite bmm;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +34,11 @@ public class GameoverPopup : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level2")
         {
-            Debug.Log("Triggered");
+            //Debug.Log("Triggered");
             nextLevelButton.onClick.AddListener(NavigateBackToMainMenu);
-            Text text = nextLevelButton.GetComponentInChildren<Text>();
-            text.text = "Return to Main Menu";
+            nextLevelButton.image.sprite = bmm;
+            //Text text = nextLevelButton.GetComponentInChildren<Text>();
+            //text.text = "Return to Main Menu";
         }
     }
 
