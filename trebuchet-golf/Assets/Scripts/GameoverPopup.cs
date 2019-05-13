@@ -48,7 +48,7 @@ public class GameoverPopup : MonoBehaviour
 
         float distance = Vector3.Distance(this.ball.position, this.flag.position);
 
-        this.distanceText.text = "Ayy lmao your distance to the hole was: " + distance.ToString("F1") + "m.";
+        this.distanceText.text = "Your distance to the castle was: " + distance.ToString("F1") + "m.";
     }
 
     void NavigateBackToMainMenu()
