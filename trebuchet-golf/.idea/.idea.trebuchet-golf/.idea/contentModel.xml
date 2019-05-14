@@ -35,6 +35,7 @@
           <e p="RoundManager.cs" t="Include" />
           <e p="ScoreKeeper.cs" t="Include" />
           <e p="TrebuchetRotation.cs" t="Include" />
+          <e p="VideoPlayer.cs" t="Include" />
           <e p="Wind.cs" t="Include" />
           <e p="WindIndicator.cs" t="Include" />
         </e>
