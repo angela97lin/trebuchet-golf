@@ -105,25 +105,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="8">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
               <folding>
-                <marker date="1557773713797" expanded="false" signature="6:148" ph="..." />
-                <marker date="1557773713797" expanded="true" signature="191:2395" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="415:1293" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="554:978" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="607:761" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="812:968" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="1039:1287" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="1355:1607" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="1642:1700" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="1732:2162" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="1747:1844" ph="/* this is kinda jank but for now, ... */" />
-                <marker date="1557773713797" expanded="true" signature="1904:1970" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="2035:2156" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="2058:2146" ph="/* SceneManager.LoadScene(&quot;HillyCourse&quot;); ... */" />
-                <marker date="1557773713797" expanded="true" signature="2191:2309" ph="{...}" />
-                <marker date="1557773713797" expanded="true" signature="2347:2393" ph="{...}" />
+                <marker date="1557775888819" expanded="false" signature="6:148" ph="..." />
+                <marker date="1557775888819" expanded="true" signature="191:2485" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="1333:1377" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="1333:1383" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="1445:1697" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="1732:1790" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="1822:2252" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="1837:1934" ph="/* this is kinda jank but for now, ... */" />
+                <marker date="1557775888819" expanded="true" signature="1994:2060" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="2125:2246" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="2148:2236" ph="/* SceneManager.LoadScene(&quot;HillyCourse&quot;); ... */" />
+                <marker date="1557775888819" expanded="true" signature="2281:2399" ph="{...}" />
+                <marker date="1557775888819" expanded="true" signature="2437:2483" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -336,12 +333,12 @@
       <workItem from="1557205285082" duration="1151000" />
       <workItem from="1557250752521" duration="5109000" />
       <workItem from="1557346802806" duration="235000" />
-      <workItem from="1557773616834" duration="1274000" />
+      <workItem from="1557773616834" duration="1948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12761000" />
+    <option name="totallyTimeSpent" value="13435000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,25 +596,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameoverPopup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="8">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
           <folding>
-            <marker date="1557773713797" expanded="false" signature="6:148" ph="..." />
-            <marker date="1557773713797" expanded="true" signature="191:2395" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="415:1293" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="554:978" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="607:761" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="812:968" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="1039:1287" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="1355:1607" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="1642:1700" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="1732:2162" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="1747:1844" ph="/* this is kinda jank but for now, ... */" />
-            <marker date="1557773713797" expanded="true" signature="1904:1970" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="2035:2156" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="2058:2146" ph="/* SceneManager.LoadScene(&quot;HillyCourse&quot;); ... */" />
-            <marker date="1557773713797" expanded="true" signature="2191:2309" ph="{...}" />
-            <marker date="1557773713797" expanded="true" signature="2347:2393" ph="{...}" />
+            <marker date="1557775888819" expanded="false" signature="6:148" ph="..." />
+            <marker date="1557775888819" expanded="true" signature="191:2485" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="1333:1377" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="1333:1383" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="1445:1697" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="1732:1790" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="1822:2252" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="1837:1934" ph="/* this is kinda jank but for now, ... */" />
+            <marker date="1557775888819" expanded="true" signature="1994:2060" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="2125:2246" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="2148:2236" ph="/* SceneManager.LoadScene(&quot;HillyCourse&quot;); ... */" />
+            <marker date="1557775888819" expanded="true" signature="2281:2399" ph="{...}" />
+            <marker date="1557775888819" expanded="true" signature="2437:2483" ph="{...}" />
           </folding>
         </state>
       </provider>

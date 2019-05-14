@@ -540,16 +540,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
+    - target: {fileID: 8398420339617649023, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 154037371}
-    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
+      propertyPath: m_CullingMask.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398420339617649023, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
-      propertyPath: hole
-      value: 
-      objectReference: {fileID: 2094605260}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8398420339617649022, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -620,16 +620,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8398420339617649023, guid: ee09295860ee34fa68403a055d054a8e,
+    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 311
-      objectReference: {fileID: 0}
-    - target: {fileID: 8398420339617649023, guid: ee09295860ee34fa68403a055d054a8e,
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 154037371}
+    - target: {fileID: 8398420339617649021, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: hole
+      value: 
+      objectReference: {fileID: 2094605260}
     - target: {fileID: 8398420339617649008, guid: ee09295860ee34fa68403a055d054a8e,
         type: 3}
       propertyPath: m_Enabled
@@ -1334,6 +1334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254696655742454746, guid: 30a4f10d002414ebc976c7fd3b0d05f1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7411765
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a4f10d002414ebc976c7fd3b0d05f1, type: 3}
